@@ -1,0 +1,73 @@
+conky.config = {
+background=true,
+update_interval=1,
+double_buffer=true,
+no_buffers=true,
+imlib_cache_size=10,
+
+--Graphical
+border_inner_margin = 10,
+border_outer_margin = 2,
+border_width = 1,
+default_bar_width = 220,
+default_bar_height = 10,
+default_gauge_height = 25,
+default_gauge_width = 40,
+default_graph_height = 40,
+default_graph_width = 153,
+default_shade_color = '#1c2023',
+default_outline_color = '#1c2023',
+draw_borders = false,
+draw_graph_borders = true,
+draw_shades = true,
+draw_outline = true,
+
+gap_x=10,
+gap_y=-100,
+
+alignment="bottom_left",
+minimum_height=250,
+minimum_width=0,
+
+--Windows
+own_window = true,
+own_window_argb_value = 60,
+own_window_argb_visual = true,
+own_window_class = 'Conky',
+own_window_colour = '#000000',
+own_window_hints = 'undecorated,below,above,sticky,skip_taskbar,skip_pager',
+own_window_transparent = false,
+own_window_title = 'system_conky',
+own_window_type = 'desktop',
+
+own_window_argb_visual=true,
+own_window_argb_value=0,
+
+--Textual
+extra_newline = false,
+format_human_readable = true,
+font = 'monospace:size=8',
+max_text_width = 0,
+max_user_text = 16384,
+override_utf8_locale = true,
+short_units = true,
+top_name_width = 21,
+top_name_verbose = false,
+uppercase = false,
+use_spacer = 'none',
+use_xft = true,
+xftalpha = 1,
+text_buffer_size=256,
+default_color='#1c2023',
+color1='#a4a4a4',
+};
+
+conky.text = [[
+${font Product monospace:size=80}${color1}
+${time %H:%M}
+${voffset -210}
+${font Product monospace:size=40}${color1}
+${time %Y/%m/%d }
+${voffset 110}
+]];
+
