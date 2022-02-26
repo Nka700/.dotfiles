@@ -71,7 +71,7 @@ set backspace=2 "Newlines and indents can now be removed with backspace
 set title       "Show the name of the file being edited
 set ruler       "Show the ruler (which displays the number of lines in the lower right corner)
 set shiftwidth=4 "Number of tabs at line break for autoindent
-"set expandtab "Don't replace tabs with spaces
+set expandtab "Don't replace tabs with spaces
 set tabstop=2 "Display width for Tab characters other than at the beginning of a line
 set shiftwidth=2 "Display width of the Tab character at the beginning of a line
 set noswapfile  "Don't create a swap file
