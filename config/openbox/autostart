@@ -8,7 +8,7 @@ tint2 &
 nitrogen --restore &
 
 # start conkyrc
-CONKYCONFIGS=`find ${HOME}/.config/conky/ -name "*conkyrc*"`
+CONKYCONFIGS=`find ${HOME}/.config -name "*conkyrc*"`
 echo $CONKYCONFIGS
 for CONFIG in $CONKYCONFIGS
 do
