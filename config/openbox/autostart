@@ -22,3 +22,6 @@ xinput disable 'SynPS/2 Synaptics TouchPad'
 
 # set a wallpaper 
 nitrogen --force-setter=xinerama --restore
+
+# start fcitx5
+fcitx5 &
