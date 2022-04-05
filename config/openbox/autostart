@@ -18,7 +18,8 @@ do
 done
 
 # disable TouchPad
-xinput disable 'SynPS/2 Synaptics TouchPad'
+#xinput disable 'SynPS/2 Synaptics TouchPad'
+xinput disable 'Synaptics TM3075-002'
 
 # set a wallpaper 
 nitrogen --force-setter=xinerama --restore

@@ -107,7 +107,7 @@ zstyle ':completion:*' group-name ''
 
 # ssh keys
 eval $(ssh-agent)
-ssh-add ${HOME}/.ssh/*.pem
+#ssh-add ${HOME}/.ssh/*.pem
 
 # awscli autocompetion
 autoload bashcompinit
@@ -118,17 +118,17 @@ complete -C '/usr/local/bin/aws_completer' aws
 #export PATH="$HOME/.tfenv/bin:$PATH"
 
 # for gem's env
-export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
-
-# for go's env
-export GOENV_ROOT="$HOME/.goenv"
-export PATH="$GOENV_ROOT/bin:$PATH"
-eval "$(goenv init -)"
-export PATH="$GOROOT/bin:$PATH"
-export PATH="$PATH:$GOPATH/bin"
-
-# for ruby's env
-eval "$(rbenv init -)"
+#export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
+#
+## for go's env
+#export GOENV_ROOT="$HOME/.goenv"
+#export PATH="$GOENV_ROOT/bin:$PATH"
+#eval "$(goenv init -)"
+#export PATH="$GOROOT/bin:$PATH"
+#export PATH="$PATH:$GOPATH/bin"
+#
+## for ruby's env
+#eval "$(rbenv init -)"
 
 # for anaconda 
 ## >>> conda initialize >>>
