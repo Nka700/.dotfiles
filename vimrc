@@ -83,7 +83,8 @@ set nowrap        "No wrapping of long lines
 set undolevels=100 "Number of undoable items
 set cursorline "draw a horizontal line
 set statusline+=%m "Check indication of changes
-colorscheme molokai
+"colorscheme molokai
+colorscheme desert
 set t_Co=256
 "set shortcut keys
 nmap <C-S> :w<CR>
