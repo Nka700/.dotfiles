@@ -1,53 +1,46 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin()
+" !! write Plugs here !!
+Plug 'plugVim/plug.vim'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+Plug 'scrooloose/nerdtree'
+Plug 'kannokanno/previm'
+Plug 'tyru/open-browser.vim'
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+" Automatically show Vim's complete menu while typing.
+Plug 'vim-scripts/AutoComplPop'
+Plug 'WolfgangMehner/bash-support'
+"Plug 'Shougo/neocomplete.vim'
+Plug 'Shougo/deoplete.nvim'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
+" Plug for terraform tf files
+Plug 'hashivim/vim-terraform'
+" Plug for json files
+Plug 'elzr/vim-json'
+" Plug for markdown toc
+Plug 'mzlogin/vim-markdown-toc'
+" Plug for csv
+Plug 'mechatroner/rainbow_csv'
+" Plug for C
+Plug 'justmao945/vim-clang'
+" All of your Plugins must be added before the following line
+call plug#end()
 
-
-" !! write plugins here !!
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
 let g:vim_markdown_folding_style_pythonic = 1
 " TableFormatはよく使うのでエイリアス
 :command TF TableFormat
 " list追加時のindentは行わない
 let g:vim_markdown_new_list_item_indent = 0
 
-Plugin 'scrooloose/nerdtree'
-Plugin 'kannokanno/previm'
-Plugin 'tyru/open-browser.vim'
-Plugin 'https://github.com/twitvim/twitvim.git'
-Plugin 'TwitVim'
-Plugin 'jistr/vim-nerdtree-tabs'
-"Plugin 'leshill/vim-json'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-surround'
-" Automatically show Vim's complete menu while typing.
-Plugin 'vim-scripts/AutoComplPop'
-Plugin 'WolfgangMehner/bash-support'
-"Plugin 'Shougo/neocomplete.vim'
-Plugin 'Shougo/deoplete.nvim'
-Plugin 'roxma/nvim-yarp'
-Plugin 'roxma/vim-hug-neovim-rpc'
-" Plugin for terraform tf files
-Plugin 'hashivim/vim-terraform'
-" Plugin for json files
-Plugin 'elzr/vim-json'
-" Plugin for markdown toc
-Plugin 'mzlogin/vim-markdown-toc'
-" Plugin for csv
-Plugin 'mechatroner/rainbow_csv'
-" Plugin for C
-Plugin 'justmao945/vim-clang'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
 filetype plugin on    " required
 filetype indent on    " required
 filetype on    " required
@@ -57,7 +50,6 @@ let $LANG='ja_JP.UTF-8'
 set encoding=utf-8
 set fileencodings=utf-8,cp932
 set fileformats=unix,dos,mac
-
 set cursorline  "Highlight the current line.
 set smartindent "Smart indentation
 set statusline+=%<%F  " Show file name
