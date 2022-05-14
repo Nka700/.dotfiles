@@ -238,5 +238,11 @@ let g:clang_format_exec = 'clang-format'
 let g:clang_c_options = '-std=c11'
 let g:clang_cpp_options = '-std=c++1z -stdlib=libc++ -pedantic-errors'
 
-
+" vim startup measurement
+command! Profile call s:command_profile()
+function! s:command_profile() abort
+  profile start ~/profile.txt
+  profile func *
+  profile file *
+endfunction
 
