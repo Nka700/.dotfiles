@@ -19,42 +19,42 @@
     <primaryMonitor>Mouse</primaryMonitor>
   </placement>
   <theme>
-    <name>ArchLabs-Dark</name>
+    <name>Artwiz-boxed</name>
     <titleLayout>NLIMC</titleLayout>
     <keepBorder>yes</keepBorder>
     <animateIconify>yes</animateIconify>
     <font place="ActiveWindow">
-      <name>Monospace</name>
+      <name>Noto Sans Mono CJK JP</name>
       <size>11</size>
       <weight>Normal</weight>
       <slant>Normal</slant>
     </font>
     <font place="InactiveWindow">
-      <name>Monospace</name>
+      <name>Noto Sans Mono CJK JP</name>
       <size>11</size>
       <weight>Normal</weight>
-      <slant>Italic</slant>
+      <slant>Normal</slant>
     </font>
     <font place="MenuHeader">
-      <name>Monospace</name>
+      <name>Noto Sans Mono CJK JP</name>
       <size>11</size>
       <weight>Normal</weight>
       <slant>Normal</slant>
     </font>
     <font place="MenuItem">
-      <name>Monospace</name>
+      <name>Noto Sans Mono CJK JP</name>
       <size>10</size>
       <weight>Normal</weight>
       <slant>Normal</slant>
     </font>
     <font place="ActiveOnScreenDisplay">
-      <name>Monospace</name>
+      <name>Noto Sans Mono CJK JP</name>
       <size>10</size>
       <weight>Normal</weight>
       <slant>Normal</slant>
     </font>
     <font place="InactiveOnScreenDisplay">
-      <name>Monospace</name>
+      <name>Noto Sans Mono CJK JP</name>
       <size>10</size>
       <weight>Normal</weight>
       <slant>Normal</slant>
