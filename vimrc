@@ -1,5 +1,4 @@
 set nocompatible              " be iMproved, required
-filetype off                  " required
 
 call plug#begin()
 " !! write Plugs here !!
@@ -10,10 +9,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'kannokanno/previm'
 Plug 'tyru/open-browser.vim'
 Plug 'jistr/vim-nerdtree-tabs'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
+"Plug 'jreybert/vimagit'
 Plug 'tpope/vim-surround'
 " Automatically show Vim's complete menu while typing.
 Plug 'vim-scripts/AutoComplPop'
@@ -36,9 +33,7 @@ Plug 'justmao945/vim-clang'
 call plug#end()
 
 let g:vim_markdown_folding_style_pythonic = 1
-" TableFormatはよく使うのでエイリアス
-:command TF TableFormat
-" list追加時のindentは行わない
+" Don't indent when adding a list
 let g:vim_markdown_new_list_item_indent = 0
 
 filetype plugin on    " required
@@ -52,7 +47,6 @@ set fileencodings=utf-8,cp932
 set fileformats=unix,dos,mac
 set cursorline  "Highlight the current line.
 set smartindent "Smart indentation
-set statusline+=%<%F  " Show file name
 syntax on       "Show syntax color 
 set number      "Show line number 
 set incsearch   "Incremental search 
@@ -74,7 +68,6 @@ set wildmenu wildmode=list:full   "Enhanced completion functions
 set nowrap        "No wrapping of long lines
 set undolevels=100 "Number of undoable items
 set cursorline "draw a horizontal line
-set statusline+=%m "Check indication of changes
 "colorscheme molokai
 colorscheme desert
 set t_Co=256
@@ -86,7 +79,7 @@ imap <C-S> <Esc>:w<CR>a
 set complete+=kspell
 set completeopt=menuone,longest
 set shortmess=c
-      
+
 "Change settings by file extension
 autocmd BufNewFile,BufRead *.{md,txt} silent setlocal filetype=markdown 
 autocmd BufNewFile,BufRead *.{md,txt} silent
@@ -100,19 +93,13 @@ highlight EndOfBuffer ctermbg=none
 "settings for kannokanno/previm?
 autocmd BufRead,BufNewFile *.md silent set filetype=markdown
 
-"preview ctrl + p
-"nnoremap <silent> <C-p> :PrevimOpen<CR>
-
-"enable python for Twitvim
-let twitvim_enable_python3 = 1
-
 "settings for plasticboy/vim-markdown
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_auto_insert_bullets = 0
 let g:vim_markdown_new_list_item_indent = 0
 
 "press <F6> key then insert timstamp and change insert mode.
-nmap <F6> <ESC>i<C-R>=strftime("%Y/%m/%d %H:%M")<CR>
+nmap <F6> <ESC>i<C-R>=strftime("%Y/%m/%d_%H:%M")<CR>
 
 "open a NERDTree automatically when vim starts up
 autocmd vimenter * NERDTree
@@ -134,50 +121,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " For json settings
 autocmd BufNewFile,BufRead *.json set filetype=json
 let g:vim_json_syntax_conceal = 0
-
-" Powerline系フォントを利用する
-set laststatus=2
-let g:airline_powerline_fonts = 1
-"let g:airline#extensions#tabline#enabled = 1
-"let g:airline#extensions#tabline#buffer_idx_mode = 1
-let g:airline#extensions#whitespace#mixed_indent_algo = 1
-let g:airline_theme = 'ayu_dark'
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-
-" unicode symbols
-let g:airline_left_sep = '»'
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '«'
-let g:airline_right_sep = '◀'
-let g:airline_symbols.crypt = '🔒'
-let g:airline_symbols.linenr = '☰'
-let g:airline_symbols.linenr = '␊'
-let g:airline_symbols.linenr = '␤'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.maxlinenr = ''
-let g:airline_symbols.maxlinenr = '㏑'
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
-let g:airline_symbols.spell = 'Ꞩ'
-let g:airline_symbols.notexists = '∄'
-let g:airline_symbols.whitespace = 'Ξ'
-
-" powerline symbols
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = '☰'
-let g:airline_symbols.maxlinenr = ''
-
-" Remap <ESC> to jk
-"inoremap jk <ESC>
 
 " Clipboard cooperation between vim and desktop
 set clipboard&
@@ -206,15 +149,6 @@ vnoremap <silent> <C-p> "0p<CR>
 " for dockerfile syntax
 autocmd BufNewFile,BufRead Dockerfile* set syntax=dockerfile
 
-" For neocompletion plugin
-"let g:neocomplete#enable_at_startup = 1
-"if !exists('g:neocomplete#force_omni_input_patterns')
-"    let g:neocomplete#force_omni_input_patterns = {}
-"endif
-"let g:neocomplete#force_overwrite_completefunc = 1
-"let g:neocomplete#force_omni_input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-"let g:neocomplete#force_omni_input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-
 " For completion deoplete plugin
 let g:deoplete#enable_at_startup = 1
 if !exists('g:deoplete#force_omni_input_patterns')
@@ -224,7 +158,6 @@ endif
 let g:deoplete#force_overwrite_completefunc = 1
 let g:deoplete#force_omni_input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
 let g:deoplete#force_omni_input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-
 
 " For clang
 let g:clang_auto = 0
@@ -238,5 +171,26 @@ let g:clang_format_exec = 'clang-format'
 let g:clang_c_options = '-std=c11'
 let g:clang_cpp_options = '-std=c++1z -stdlib=libc++ -pedantic-errors'
 
+set laststatus=2  " Show statusline always
+set statusline=
+set statusline+=%#PmenuSel#
+set statusline+=%{fugitive#statusline()} "Show GitBranch
+set statusline+=%#LineNr#
+set statusline+=\ %f  " Show file name
+set statusline+=%m "Check indication of changes
+set statusline+=%#CursorColumn#
+set statusline+=%y  " Show file type
+set statusline+=[ENC=%{&fileencoding}] " Show fileencoding
+set statusline+=[LOW=%l/%L] "Show current row count/total row count
+set statusline+=%r  " Show readonly flag
+set statusline+=\ %p%%
+set statusline+=\ %l:%c
 
+" vim startup measurement
+command! Profile call s:command_profile()
+function! s:command_profile() abort
+  profile start ~/profile.txt
+  profile func *
+  profile file *
+endfunction
 
