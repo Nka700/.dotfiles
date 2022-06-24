@@ -155,5 +155,10 @@ POWERLEVEL9K_SHORTEN_STRATEGY=truncate_folders
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(anaconda context dir vcs status)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 
+# for kubectl completion
+source <(kubectl completion zsh)
+
 # neofetch
 neofetch
+
+
