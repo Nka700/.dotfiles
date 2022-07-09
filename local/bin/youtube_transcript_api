@@ -1,0 +1,2 @@
+#!/bin/bash
+docker run --rm -it nka700/youtube_transcript_api ${@}
