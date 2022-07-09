@@ -168,8 +168,9 @@ let g:clang_c_completeopt   = 'menuone'
 let g:clang_cpp_completeopt = 'menuone'
 let g:clang_exec = 'clang'
 let g:clang_format_exec = 'clang-format'
-let g:clang_c_options = '-std=c11'
-let g:clang_cpp_options = '-std=c++1z -stdlib=libc++ -pedantic-errors'
+"let g:clang_c_options = '-std=c11'
+let g:clang_c_options = '-std=gnu11'
+let g:clang_cpp_options = '-std=c++11 -stdlib=libc++ --pedantic-errors'
 
 set laststatus=2  " Show statusline always
 set statusline=
