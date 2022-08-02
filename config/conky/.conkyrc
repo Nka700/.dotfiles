@@ -42,7 +42,7 @@ draw_outline = true,
 --Textual
 extra_newline = false,
 format_human_readable = true,
-font = 'monospace:size=8',
+font = 'Source Code Pro:style=Regular:size=8',
 max_text_width = 0,
 max_user_text = 16384,
 override_utf8_locale = true,
@@ -127,5 +127,9 @@ ${downspeedgraph wlan0 30,290 000000 00FF00} ${endif}${if_up wlan1}
 ↑ UP: ${upspeedf wlan1} kb/s $alignr ${totalup wlan1}${alignr}
 ${upspeedgraph wlan1 30,290 000000 FFBF00}
 ↓ Down: ${downspeedf wlan1} kb/s $alignr ${totaldown wlan1}
-${downspeedgraph wlan1 30,290 000000 00FF00} ${endif}
+${downspeedgraph wlan1 30,290 000000 00FF00} ${endif}${if_up wlp3s0}
+↑ UP: ${upspeedf wlp3s0} kb/s $alignr ${totalup wlp3s0}${alignr}
+${upspeedgraph wlp3s0 30,290 000000 FFBF00}
+↓ Down: ${downspeedf wlp3s0} kb/s $alignr ${totaldown wlp3s0} 
+${downspeedgraph wlp3s0 30,290 000000 00FF00} ${endif}${if_up wlp3s0}${endif}
 ]];
