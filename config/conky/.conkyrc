@@ -131,5 +131,9 @@ ${downspeedgraph wlan1 30,290 000000 00FF00} ${endif}${if_up wlp3s0}
 ↑ UP: ${upspeedf wlp3s0} kb/s $alignr ${totalup wlp3s0}${alignr}
 ${upspeedgraph wlp3s0 30,290 000000 FFBF00}
 ↓ Down: ${downspeedf wlp3s0} kb/s $alignr ${totaldown wlp3s0} 
-${downspeedgraph wlp3s0 30,290 000000 00FF00} ${endif}${if_up wlp3s0}${endif}
+${downspeedgraph wlp3s0 30,290 000000 00FF00} ${endif}${if_up wlp3s0}${endif}${if_up eno1}
+↑ UP: ${upspeedf eno1} kb/s $alignr ${totalup eno1}${alignr}
+${upspeedgraph eno1 30,290 000000 FFBF00}
+↓ Down: ${downspeedf eno1} kb/s $alignr ${totaldown eno1} 
+${downspeedgraph eno1 30,290 000000 00FF00} ${endif}${if_up eno1}${endif}
 ]];
