@@ -63,10 +63,10 @@ color1='#a4a4a4',
 };
 
 conky.text = [[
-${font Product monospace:size=80}${color1}
+${font Source Code Pro:style=Regular:size=80}${color1}
 ${time %H:%M}
 ${voffset -210}
-${font Product monospace:size=40}${color1}
+${font Source Code Pro:style=Regular:size=40}${color1}
 ${time %Y/%m/%d }
 ${voffset 110}
 ]];
