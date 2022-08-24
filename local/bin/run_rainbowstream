@@ -1,0 +1,10 @@
+#!/bin/bash
+set -o nounset                                  # Treat unset variables as an error
+
+docker run \
+  --name ${1} \
+  -it --rm nka700/rainbowstream
+#  -v ${HOME}/dockerfile/rainbowstream/.rainbow_config.json:/root/.rainbow_config.json \
+#  --name ${1} \
+#  -it --rm nka700/rainbowstream
+
