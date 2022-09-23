@@ -1,5 +1,5 @@
 set nocompatible              " be iMproved, required
-
+set nrformats                 " treats all numbers as decimal numbers, whether they are prefixed with 0 or not
 call plug#begin()
 " !! write Plugs here !!
 Plug 'plugVim/plug.vim'
@@ -15,6 +15,8 @@ Plug 'tpope/vim-surround'
 " Automatically show Vim's complete menu while typing.
 Plug 'vim-scripts/AutoComplPop'
 Plug 'WolfgangMehner/bash-support'
+"Plug 'Valloric/YouCompleteMe'
+"Plug 'skywind3000/vim-auto-popmenu'
 "Plug 'Shougo/neocomplete.vim'
 Plug 'Shougo/deoplete.nvim'
 Plug 'roxma/nvim-yarp'
@@ -76,9 +78,12 @@ nmap <C-S> :w<CR>
 imap <C-S> <Esc>:w<CR>a
 
 "For AutoCompletion
+let g:apc_enable_ft = {'*':1}
+set cpt=.,k,w,b
 set complete+=kspell
-set completeopt=menuone,longest
-set shortmess=c
+"set completeopt=menuone,longest
+set completeopt=menu,menuone,noselect,longest
+set shortmess+=c
 
 "Change settings by file extension
 autocmd BufNewFile,BufRead *.{md,txt} silent setlocal filetype=markdown 
@@ -186,6 +191,10 @@ set statusline+=[LOW=%l/%L] "Show current row count/total row count
 set statusline+=%r  " Show readonly flag
 set statusline+=\ %p%%
 set statusline+=\ %l:%c
+
+" settings for Kubernetes  
+" for yaml paste
+"set paste
 
 " vim startup measurement
 command! Profile call s:command_profile()
