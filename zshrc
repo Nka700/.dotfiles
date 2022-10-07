@@ -118,7 +118,7 @@ complete -C '/usr/local/bin/aws_completer' aws
 #export PATH="$HOME/.tfenv/bin:$PATH"
 
 # for gem's env
-export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
+#export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 
 # for go's env
 export GOENV_ROOT="$HOME/.goenv"
@@ -128,7 +128,7 @@ export PATH="$GOROOT/bin:$PATH"
 export PATH="$PATH:$GOPATH/bin"
 
 # for ruby's env
-eval "$(rbenv init -)"
+#eval "$(rbenv init -)"
 
 # for anaconda 
 ## >>> conda initialize >>>

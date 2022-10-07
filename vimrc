@@ -1,4 +1,5 @@
 set nocompatible              " be iMproved, required
+set nrformats=                 " treats all numbers as decimal numbers, whether they are prefixed with 0 or not
 
 call plug#begin()
 " !! write Plugs here !!
