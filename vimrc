@@ -107,7 +107,7 @@ let g:vim_markdown_new_list_item_indent = 0
 nmap <F6> <ESC>i<C-R>=strftime("%Y/%m/%d_%H:%M")<CR>
 
 "open a NERDTree automatically when vim starts up
-autocmd vimenter * NERDTree
+"autocmd vimenter * NERDTree
 
 " Visualization of double-byte spaces, spaces at the end of lines, and tabs. 
 set list
@@ -118,7 +118,7 @@ let NERDTreeShowHidden = 1
 nnoremap <silent><C-e> :NERDTreeFocusToggle<CR>
 
 " Show tree by default in newtab
-let g:nerdtree_tabs_open_on_console_startup=1
+"let g:nerdtree_tabs_open_on_console_startup=1
 
 " If NERDTree is open when all other buffers are closed, close NERDTree together
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
