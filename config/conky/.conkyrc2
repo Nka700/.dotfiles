@@ -18,7 +18,7 @@ default_graph_width = 153,
 default_shade_color = '#1c2023',
 default_outline_color = '#1c2023',
 draw_borders = false,
-draw_graph_borders = true,
+draw_graph_borders = false,
 draw_shades = true,
 draw_outline = true,
 
@@ -26,7 +26,7 @@ gap_x=10,
 gap_y=-100,
 
 alignment="bottom_left",
-minimum_height=250,
+minimum_height=300,
 minimum_width=0,
 
 --Windows
@@ -44,9 +44,8 @@ own_window_argb_visual=true,
 own_window_argb_value=0,
 
 --Textual
-extra_newline = false,
 format_human_readable = true,
-font = 'monospace:size=8',
+font="Droid Sans:size=10",
 max_text_width = 0,
 max_user_text = 16384,
 override_utf8_locale = true,
@@ -63,11 +62,16 @@ color1='#a4a4a4',
 };
 
 conky.text = [[
-${font Source Code Pro:style=Regular:size=80}${color1}
-${time %H:%M}
-${voffset -210}
-${font Source Code Pro:style=Regular:size=40}${color1}
-${time %Y/%m/%d }
-${voffset 110}
+${font Source Code Pro:style=Regular:size=45}${color1}\
+${time %H:%M}\
+${font Source Code Pro:style=Regular:size=15}${color1}\
+${time %p}
+${voffset -10}
+${voffset -30}
+${font Source Code Pro:style=Regular:size=20}${color1}\
+${time %Y/%m/%d}\
+${voffset -5}
+${font Source Code Pro:style=Regular:size=15}${color1}\
+CPU usage: ${cpu cpu0}%   Storage: ${fs_free /} free\
 ]];
 
