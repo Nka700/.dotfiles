@@ -49,7 +49,8 @@ set fileformats=unix,dos,mac
 set cursorline  "Highlight the current line.
 set smartindent "Smart indentation
 syntax on       "Show syntax color 
-set number      "Show line number 
+"set number      "Show line number 
+set relativenumber      "Show line number(relative) 
 set incsearch   "Incremental search 
 set ignorecase  " Search regardless of case
 set showmatch   "Emphasize the corresponding parentheses when entering parentheses
