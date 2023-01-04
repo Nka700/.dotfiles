@@ -1,3 +1,8 @@
 #!/bin/bash
-docker run --rm -it nka700/twty ${@}
-
+if [ $# -ge 1 ]; then
+  echo "$#" 1>&2
+  docker run -v ${HOME}/.config/twty:/root/.config/twty --rm -it nka700/twty ${@}
+else
+  echo "$#" 1>&2
+  docker run -v ${HOME}/.config/twty:/root/.config/twty --rm -it nka700/twty
+fi
