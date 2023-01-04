@@ -4,6 +4,8 @@
 [keybindings]
 [profiles]
   [[default]]
+    background_darkness = 0.65
+    background_type = transparent
     cursor_color = "#aaaaaa"
     show_titlebar = False
 [layouts]
