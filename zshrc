@@ -161,4 +161,5 @@ source <(kubectl completion zsh)
 # neofetch
 neofetch
 
-
+# set qemu env
+export LIBVIRT_DEFAULT_URI="qemu:///system"
