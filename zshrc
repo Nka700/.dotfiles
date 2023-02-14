@@ -118,17 +118,17 @@ complete -C '/usr/local/bin/aws_completer' aws
 #export PATH="$HOME/.tfenv/bin:$PATH"
 
 # for gem's env
-export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
+#export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 
 # for go's env
-export GOENV_ROOT="$HOME/.goenv"
-export PATH="$GOENV_ROOT/bin:$PATH"
-eval "$(goenv init -)"
-export PATH="$GOROOT/bin:$PATH"
-export PATH="$PATH:$GOPATH/bin"
+#export GOENV_ROOT="$HOME/.goenv"
+#export PATH="$GOENV_ROOT/bin:$PATH"
+#eval "$(goenv init -)"
+#export PATH="$GOROOT/bin:$PATH"
+#export PATH="$PATH:$GOPATH/bin"
 
 # for ruby's env
-eval "$(rbenv init -)"
+#eval "$(rbenv init -)"
 
 # for anaconda 
 ## >>> conda initialize >>>
@@ -161,9 +161,6 @@ source <(kubectl completion zsh)
 # neofetch
 neofetch
 
-
-
-PATH="/home/nka700/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="/home/nka700/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="/home/nka700/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/home/nka700/perl5\""; export PERL_MB_OPT;
