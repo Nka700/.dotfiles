@@ -76,9 +76,9 @@ ${voffset -5}
 ${font Source Code Pro:style=Regular:size=10}${color1}\
 ${color1}${alignc}T O P
 ${hr}
- Name               PID   CPU%   MEM%
- ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
- ${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
- ${top name 3} ${top pid 3} ${top cpu 3} ${top mem 3}
+ProcessName                PID     CPU%
+${top name 1} ${top pid 1}   ${top cpu 1}%
+${top name 2} ${top pid 2}   ${top cpu 2}%
+${top name 3} ${top pid 3}   ${top cpu 3}%
 ]];
 
