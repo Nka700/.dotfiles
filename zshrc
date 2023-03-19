@@ -163,3 +163,6 @@ neofetch
 
 # set qemu env
 export LIBVIRT_DEFAULT_URI="qemu:///system"
+
+# for kitty ssh
+export TERM=xterm-256color
