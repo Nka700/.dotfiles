@@ -168,3 +168,6 @@ PERL_MM_OPT="INSTALL_BASE=/home/nka700/perl5"; export PERL_MM_OPT;
 
 # set qemu env
 export LIBVIRT_DEFAULT_URI="qemu:///system"
+
+# for kitty ssh
+export TERM=xterm-256color
