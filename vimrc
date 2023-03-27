@@ -51,6 +51,7 @@ set smartindent "Smart indentation
 syntax on       "Show syntax color 
 "set number      "Show line number 
 set relativenumber      "Show line number(relative) 
+set number      "Show line number 
 set incsearch   "Incremental search 
 set ignorecase  " Search regardless of case
 set showmatch   "Emphasize the corresponding parentheses when entering parentheses
@@ -126,6 +127,7 @@ let g:vim_json_syntax_conceal = 0
 
 " Clipboard cooperation between vim and desktop
 set clipboard&
+"set clipboard+=unname
 set clipboard^=unnamedplus
 
 "For AutoCompletion
