@@ -18,7 +18,7 @@
 #===============================================================================
 
 set -o nounset                                  # Treat unset variables as an error
-if [[ "x$1" == "x" ]]; then
+if [[ "$1" == "x" ]]; then
   echo "Usage: mpvy <playlist_id>"
 else
   #title=`youtube-dl --skip-download --get-title $1`
