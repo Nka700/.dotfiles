@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<opml version="2.0">
+    <head>
+	<title>snownews subscriptions</title>
+    </head>
+    <body>
+	<outline text="Arch Linux: 最近のニュース" xmlUrl="https://www.archlinux.jp/feeds/news.xml"/>
+	<outline text="DistroWatch.com: News" xmlUrl="https://distrowatch.com/news/dw.xml"/>
+	<outline text="窓の杜プログラミング" xmlUrl="https://forest.watch.impress.co.jp/data/rss/1.0/wf/feed.rdf"/>
+	<outline text="The Verge -  Teches" xmlUrl="https://www.theverge.com/rss/tech/index.xml"/>
+	<outline text="CEEK.JP NEWS ニュースヘッドライン" xmlUrl="http://news.ceek.jp/rss/index.rdf"/>
+	<outline text="CEEK.JP NEWS 電脳" xmlUrl="http://news.ceek.jp/rss/it.rdf"/>
+	<outline text="AKIBA PC Hotline!" xmlUrl="https://akiba-pc.watch.impress.co.jp/data/rss/1.0/ah/feed.rdf"/>
+    </body>
+</opml>
