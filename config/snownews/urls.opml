@@ -11,5 +11,10 @@
 	<outline text="CEEK.JP NEWS ニュースヘッドライン" xmlUrl="http://news.ceek.jp/rss/index.rdf"/>
 	<outline text="CEEK.JP NEWS 電脳" xmlUrl="http://news.ceek.jp/rss/it.rdf"/>
 	<outline text="AKIBA PC Hotline!" xmlUrl="https://akiba-pc.watch.impress.co.jp/data/rss/1.0/ah/feed.rdf"/>
+	<outline text="Blog – Hackaday" xmlUrl="https://hackaday.com/blog/feed/"/>
+	<outline text="9to5Linux" xmlUrl="https://9to5linux.com/feed/atom"/>
+	<outline text="Computerworld" xmlUrl="http://www.computerworld.com/index.rss"/>
+	<outline text="http://www.2chan.net/index2.html" xmlUrl="http://www.2chan.net/index2.html"/>
+	<outline text="Liliputing" xmlUrl="https://liliputing.com/feed/"/>
     </body>
 </opml>
