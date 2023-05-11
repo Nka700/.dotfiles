@@ -90,7 +90,8 @@ ${font OpenLogos:size=30}B${font}
 Distrib:$alignr${execi 86400 echo "$(cat $(ls -atr /etc/*-release) | grep "PRETTY_NAME" | cut -d= -f2) $(cat $(ls -atr /etc/*-release) | grep "VERSION_ID" | cut -d= -f2)"}
 Host:$alignr$nodename
 Uptime:$alignr$uptime
-Battery: ${battery_percent BAT0}% ${alignr}${battery_bar 8,70 BAT0}
+Battery0: ${battery_percent BAT0}% ${alignr}${battery_bar 8,70 BAT0}
+Battery1: ${battery_percent BAT1}% ${alignr}${battery_bar 8,70 BAT1}
 Disk IO: ${diskio /dev/sda}
 #/boot   : ${diskio /dev/sdb2}${alignr}${diskiograph /dev/sdb1 10,100 104E8B 0077ff 750}
 /   : ${diskio /dev/sdb2}${alignr}${diskiograph /dev/sdb2 10,100 104E8B 0077ff 750}
