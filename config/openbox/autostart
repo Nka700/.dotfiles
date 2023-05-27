@@ -24,3 +24,6 @@ nitrogen --force-setter=xinerama --restore
 
 # start fcitx5
 fcitx5 &
+
+# start xfce-polkit
+#exec /usr/lib/xfce-polkit/xfce-polkit &
