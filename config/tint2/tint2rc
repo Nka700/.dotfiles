@@ -253,7 +253,7 @@ execp_icon_h = 0
 #-------------------------------------
 # Button 1
 button = new
-button_icon = /home/nka700/Images/1200px-Archlinux-icon-crystal-64.svg
+button_icon = ${HOME}/Images/Archlinux-icon-crystal-64.svg
 button_text = 
 button_lclick_command = jgmenu_run >/dev/null 2>&1 &
 button_rclick_command = exo-open ~/.config/jgmenu/jgmenurc
