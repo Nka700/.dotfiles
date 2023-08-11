@@ -14,7 +14,7 @@
 	<outline text="Blog – Hackaday" xmlUrl="https://hackaday.com/blog/feed/"/>
 	<outline text="9to5Linux" xmlUrl="https://9to5linux.com/feed/atom"/>
 	<outline text="Computerworld" xmlUrl="http://www.computerworld.com/index.rss"/>
-	<outline text="http://www.2chan.net/index2.html" xmlUrl="http://www.2chan.net/index2.html"/>
 	<outline text="Liliputing" xmlUrl="https://liliputing.com/feed/"/>
+	<outline text="gihyo.jp" xmlUrl="https://gihyo.jp/feed/rss2"/>
     </body>
 </opml>

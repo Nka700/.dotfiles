@@ -10,14 +10,10 @@ Plug 'kannokanno/previm'
 Plug 'tyru/open-browser.vim'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tpope/vim-fugitive'
-"Plug 'jreybert/vimagit'
 Plug 'tpope/vim-surround'
 " Automatically show Vim's complete menu while typing.
 Plug 'vim-scripts/AutoComplPop'
 Plug 'WolfgangMehner/bash-support'
-"Plug 'Valloric/YouCompleteMe'
-"Plug 'skywind3000/vim-auto-popmenu'
-"Plug 'Shougo/neocomplete.vim'
 Plug 'Shougo/deoplete.nvim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
@@ -31,12 +27,20 @@ Plug 'mzlogin/vim-markdown-toc'
 Plug 'mechatroner/rainbow_csv'
 " Plug for C
 Plug 'justmao945/vim-clang'
+" Plug for go
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" Plug for python
+" 'davidhalter/jedi-vim'
+" twitter
 " All of your Plugins must be added before the following line
 call plug#end()
 
 let g:vim_markdown_folding_style_pythonic = 1
 " Don't indent when adding a list
 let g:vim_markdown_new_list_item_indent = 0
+
+"backticks always visible
+let g:vim_markdown_conceal = 0
 
 filetype plugin on    " required
 filetype indent on    " required
@@ -72,6 +76,8 @@ set wildmenu wildmode=list:full   "Enhanced completion functions
 set nowrap        "No wrapping of long lines
 set undolevels=100 "Number of undoable items
 set cursorline "draw a horizontal line
+"disable folding
+set nofoldenable    " disable folding
 "colorscheme molokai
 colorscheme desert
 set t_Co=256
@@ -192,11 +198,14 @@ set statusline+=[ENC=%{&fileencoding}] " Show fileencoding
 set statusline+=[LOW=%l/%L] "Show current row count/total row count
 set statusline+=%r  " Show readonly flag
 set statusline+=\ %p%%
-set statusline+=\ %l:%c
+"set statusline+=\ %l:%c
 
 " settings for Kubernetes  
 " for yaml paste
 "set paste
+
+" For python
+" g:jedi#force_py_version = 3
 
 " vim startup measurement
 command! Profile call s:command_profile()

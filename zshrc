@@ -34,9 +34,7 @@ SAVEHIST=1000000
 # alias
 alias ll='ls -lha --color=auto'
 alias grep='grep --color=always'
-alias du='du -sh *'
 #alias scriptlog='script -a ./term_$(whoami)_$(date +%Y_%m%d_%H%M%S).log'
-alias history='history -E 1'
 
 # Git
 function gt() {
