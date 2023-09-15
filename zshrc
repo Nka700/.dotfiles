@@ -169,3 +169,6 @@ export LIBVIRT_DEFAULT_URI="qemu:///system"
 
 # for kitty ssh
 export TERM=xterm-256color
+
+# settings for mountpoint-s3
+export PATH=$PATH:/opt/aws/mountpoint-s3/bin
