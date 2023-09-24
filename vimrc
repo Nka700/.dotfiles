@@ -197,17 +197,10 @@ set statusline+=%y  " Show file type
 set statusline+=[ENC=%{&fileencoding}] " Show fileencoding
 set statusline+=[LOW=%l/%L] "Show current row count/total row count
 set statusline+=%r  " Show readonly flag
-set statusline+=\ %p%%
-"set statusline+=\ %l:%c
+set statusline+=[%p%%] "Show current line percentage
+set statusline+=%#lite#[%o/%{wordcount().bytes}] "Show number of characters where current cursor characters is./ Show total number of characters
 
-" settings for Kubernetes  
-" for yaml paste
-"set paste
-
-" For python
-" g:jedi#force_py_version = 3
-
-" vim startup measurement
+"vim startup measurement
 command! Profile call s:command_profile()
 function! s:command_profile() abort
   profile start ~/profile.txt
