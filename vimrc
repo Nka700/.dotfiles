@@ -41,6 +41,7 @@ let g:vim_markdown_new_list_item_indent = 0
 
 "backticks always visible
 let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal_code_blocks = 0
 
 filetype plugin on    " required
 filetype indent on    " required
