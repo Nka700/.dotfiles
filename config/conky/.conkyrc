@@ -42,7 +42,7 @@ draw_outline = true,
 --Textual
 extra_newline = false,
 format_human_readable = true,
-font = 'Source Code Pro:style=Regular:size=8',
+font = 'Source Code Pro:style=Regular:size=11',
 max_text_width = 0,
 max_user_text = 16384,
 override_utf8_locale = true,
@@ -91,7 +91,7 @@ Distrib:$alignr${execi 86400 echo "$(cat $(ls -atr /etc/*-release) | grep "PRETT
 Host:$alignr$nodename
 Uptime:$alignr$uptime
 Battery0: ${battery_percent BAT0}% ${alignr}${battery_bar 8,70 BAT0}
-Battery1: ${battery_percent BAT1}% ${alignr}${battery_bar 8,70 BAT1}
+#Battery1: ${battery_percent BAT1}% ${alignr}${battery_bar 8,70 BAT1}
 Disk IO: ${diskio /dev/sda}
 #/boot   : ${diskio /dev/sdb2}${alignr}${diskiograph /dev/sdb1 10,100 104E8B 0077ff 750}
 /   : ${diskio /dev/sdb2}${alignr}${diskiograph /dev/sdb2 10,100 104E8B 0077ff 750}

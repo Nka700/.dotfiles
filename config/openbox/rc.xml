@@ -19,43 +19,43 @@
     <primaryMonitor>Mouse</primaryMonitor>
   </placement>
   <theme>
-    <name>Artwiz-boxed</name>
+    <name>Onyx-Citrus</name>
     <titleLayout>NLIMC</titleLayout>
     <keepBorder>yes</keepBorder>
     <animateIconify>yes</animateIconify>
     <font place="ActiveWindow">
       <name>Noto Sans Mono CJK JP</name>
-      <size>11</size>
+      <size>13</size>
       <weight>Normal</weight>
       <slant>Normal</slant>
     </font>
     <font place="InactiveWindow">
       <name>Noto Sans Mono CJK JP</name>
-      <size>11</size>
+      <size>13</size>
       <weight>Normal</weight>
       <slant>Normal</slant>
     </font>
     <font place="MenuHeader">
       <name>Noto Sans Mono CJK JP</name>
-      <size>11</size>
+      <size>13</size>
       <weight>Normal</weight>
       <slant>Normal</slant>
     </font>
     <font place="MenuItem">
       <name>Noto Sans Mono CJK JP</name>
-      <size>10</size>
+      <size>12</size>
       <weight>Normal</weight>
       <slant>Normal</slant>
     </font>
     <font place="ActiveOnScreenDisplay">
       <name>Noto Sans Mono CJK JP</name>
-      <size>10</size>
+      <size>12</size>
       <weight>Normal</weight>
       <slant>Normal</slant>
     </font>
     <font place="InactiveOnScreenDisplay">
       <name>Noto Sans Mono CJK JP</name>
-      <size>10</size>
+      <size>12</size>
       <weight>Normal</weight>
       <slant>Normal</slant>
     </font>
