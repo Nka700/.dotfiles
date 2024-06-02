@@ -119,3 +119,5 @@ function! s:command_profile() abort
   profile file *
 endfunction
 
+"diffopt
+set diffopt+=context:10000

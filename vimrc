@@ -8,13 +8,13 @@ Plug 'plasticboy/vim-markdown'
 Plug 'scrooloose/nerdtree'
 Plug 'kannokanno/previm'
 Plug 'tyru/open-browser.vim'
-Plug 'jistr/vim-nerdtree-tabs'
+"Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 " Automatically show Vim's complete menu while typing.
 Plug 'vim-scripts/AutoComplPop'
 Plug 'WolfgangMehner/bash-support'
-Plug 'Shougo/deoplete.nvim'
+"Plug 'Shougo/deoplete.nvim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
 " Plug for terraform tf files
@@ -129,8 +129,8 @@ nnoremap <silent><C-e> :NERDTreeFocusToggle<CR>
 " Show tree by default in newtab
 "let g:nerdtree_tabs_open_on_console_startup=1
 
-" If NERDTree is open when all other buffers are closed, close NERDTree together
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+"" If NERDTree is open when all other buffers are closed, close NERDTree together
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " For json settings
 autocmd BufNewFile,BufRead *.json set filetype=json
@@ -164,14 +164,14 @@ vnoremap <silent> <C-p> "0p<CR>
 autocmd BufNewFile,BufRead Dockerfile* set syntax=dockerfile
 
 " For completion deoplete plugin
-let g:deoplete#enable_at_startup = 1
-if !exists('g:deoplete#force_omni_input_patterns')
-    let g:deoplete#force_omni_input_patterns = {}
-endif
-
-let g:deoplete#force_overwrite_completefunc = 1
-let g:deoplete#force_omni_input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-let g:deoplete#force_omni_input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+"let g:deoplete#enable_at_startup = 1
+"if !exists('g:deoplete#force_omni_input_patterns')
+"    let g:deoplete#force_omni_input_patterns = {}
+"endif
+"
+"let g:deoplete#force_overwrite_completefunc = 1
+"let g:deoplete#force_omni_input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+"let g:deoplete#force_omni_input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 
 " For clang
 let g:clang_auto = 0
@@ -209,3 +209,5 @@ function! s:command_profile() abort
   profile file *
 endfunction
 
+"diffopt
+set diffopt+=context:10000
