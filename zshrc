@@ -163,5 +163,14 @@ neofetch
 # set qemu env
 export LIBVIRT_DEFAULT_URI="qemu:///system"
 
+# set hpc compiler path
+export PATH="/opt/nvidia/hpc_sdk/Linux_x86_64/24.3/compilers/bin:$PATH"
+export MANPATH="/opt/nvidia/hpc_sdk/Linux_x86_64/24.3/compilers/man:$MANPATH"
+export PATH="/opt/nvidia/hpc_sdk/Linux_x86_64/24.3/comm_libs/mpi/bin:$PATH"
+
 # for kitty ssh
 export TERM=xterm-256color
+
+# settings for mountpoint-s3
+export PATH=$PATH:/opt/aws/mountpoint-s3/bin
+

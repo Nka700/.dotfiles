@@ -71,6 +71,7 @@ set wildmenu wildmode=list:full   "Enhanced completion functions
 set nowrap        "No wrapping of long lines
 set undolevels=100 "Number of undoable items
 set cursorline "draw a horizontal line
+set nofoldenable " disable code folding
 "colorscheme molokai
 colorscheme desert
 set t_Co=256
