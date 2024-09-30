@@ -23,10 +23,10 @@ draw_shades = true,
 draw_outline = true,
 
 gap_x=10,
-gap_y=-350,
+gap_y=-300,
 
 alignment="middle_left",
-minimum_height=350,
+minimum_height=400,
 minimum_width=0,
 
 --Windows
@@ -71,7 +71,9 @@ ${font Source Code Pro:style=Regular:size=20}${color1}\
 ${time %Y/%m/%d}\
 ${voffset -5}
 ${font Source Code Pro:style=Regular:size=15}${color1}\
-CPU usage: ${cpu cpu0}%   Storage: ${fs_free /} free\
+Storage: ${fs_free /} free
+CPU0 : ${cpu cpu0}% , ${freq 0}MHz
+CPU1 : ${cpu cpu1}% , ${freq 1}MHz
 ${voffset -5}
 ${font Source Code Pro:style=Regular:size=10}${color1}\
 ${color1}${alignc}T O P
