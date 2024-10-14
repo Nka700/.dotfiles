@@ -45,7 +45,7 @@ SAVEHIST=1000000
 alias ll='ls -lha --color=auto'
 alias grep='grep --color=always'
 #alias scriptlog='script -a ./term_$(whoami)_$(date +%Y_%m%d_%H%M%S).log'
-
+alias date="date +'%Y/%m/%d %H:%M %Z'"
 # Git
 function gt() {
   is_in_git_repo || return
