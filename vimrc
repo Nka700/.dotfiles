@@ -200,6 +200,7 @@ set statusline+=[LOW=%l/%L] "Show current row count/total row count
 set statusline+=%r  " Show readonly flag
 set statusline+=[%p%%] "Show current line percentage
 set statusline+=%#lite#[%o/%{wordcount().bytes}] "Show number of characters where current cursor characters is./ Show total number of characters
+set guifont=Source\ Code\ Pro:h10
 
 "vim startup measurement
 command! Profile call s:command_profile()

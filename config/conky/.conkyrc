@@ -58,14 +58,14 @@ xftalpha = 1,
 
 --Windows
 own_window = true,
-own_window_argb_value = 60,
+own_window_argb_value = 100,
 own_window_argb_visual = true,
-own_window_class = 'Conky',
-own_window_colour = '#000000',
+own_window_class = conky,
+own_window_colour = '#343434',
 own_window_hints = 'undecorated,below,above,sticky,skip_taskbar,skip_pager',
-own_window_transparent = true,
+own_window_transparent = false,
 own_window_title = 'system_conky',
-own_window_type = 'desktop',
+own_window_type = 'override',
 
 --Colors (Nord)
 default_color = '#1c2023',
@@ -134,7 +134,7 @@ ${downspeedgraph wlan0 30,290 000000 00FF00} ${endif}${if_up wlan1}
 ${upspeedgraph wlan1 30,290 000000 FFBF00}
 ↓ Down: ${downspeedf wlan1} kb/s $alignr ${totaldown wlan1}
 ${downspeedgraph wlan1 30,290 000000 00FF00} ${endif}${if_up wlp3s0}
-↑ UP: ${upspeedf wlp3s0} kb/s $alignr ${totalup wlp3s0}${alignr}
+${color1}↑ UP: ${upspeedf wlp3s0} kb/s $alignr ${totalup wlp3s0}${color}
 ${color0}${upspeedgraph wlp3s0 30,290 000000 FFBF00}${color}
 ${color1}↓ Down: ${downspeedf wlp3s0} kb/s $alignr ${totaldown wlp3s0}${color}
 ${color0}${downspeedgraph wlp3s0 30,290 000000 00FF00} ${endif}${if_up wlp3s0}${endif}${color}
