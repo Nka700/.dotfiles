@@ -37,6 +37,7 @@ alias grep='grep --color=always'
 #alias scriptlog='script -a ./term_$(whoami)_$(date +%Y_%m%d_%H%M%S).log'
 alias history='history -E 1'
 alias ssh='TERM=xterm /usr/bin/ssh'
+alias date="date +'%Y/%m/%d_%H:%M_%Z'"
 # Git
 function gt() {
   is_in_git_repo || return
@@ -174,3 +175,5 @@ export TERM=xterm-256color
 # settings for mountpoint-s3
 export PATH=$PATH:/opt/aws/mountpoint-s3/bin
 
+# settings for kubectl plugin
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
