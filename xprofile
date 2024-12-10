@@ -5,7 +5,7 @@
 export XDG_CONFIG_HOME="$HOME/.config"
 export PATH="$HOME/.local/bin:$PATH"
 #
-picom -b -c &
+#picom -b -c &
 nm-applet &
 volumeicon &
 nitrogen --restore &

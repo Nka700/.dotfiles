@@ -242,7 +242,7 @@
     </keybind>
     <keybind key="Print">
       <action name="Execute">
-        <command>scrot 'ArchLabs_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES) ; gpicview $$(xdg-user-dir PICTURES)/$f'</command>
+        <command>sh -c 'xfce4-screenshooter -r -s Downloads/Screenshot_$(date +%Y%m%d_%H%M%S).png'</command>
       </action>
     </keybind>
     <keybind key="A-Print">
