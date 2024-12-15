@@ -115,7 +115,7 @@ bashcompinit
 complete -C '/usr/local/bin/aws_completer' aws
 
 # settings for terraform installed by `tfenv install`
-#export PATH="$HOME/.tfenv/bin:$PATH"
+export PATH="$HOME/.tfenv/bin:$PATH"
 
 # for gem's env
 #export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"

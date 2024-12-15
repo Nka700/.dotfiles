@@ -79,8 +79,8 @@ xinerama_head = 0,
 
 conky.text = [[
 ${color0}${alignc}W H E A T H E R
-#${hr}${color}
-#${color1}${texeci 1800 curl -s 'http://wttr.in/tokyo?0' | sed -n '3,7{s/\d27\[[0-9;]*m//g;s/^..//;s/ *$//;p}'}${color}
+${hr}${color}
+${color1}${texeci 1800 curl -s 'http://wttr.in/tokyo?0' | sed -n '3,7{s/\d27\[[0-9;]*m//g;s/^..//;s/ *$//;p}'}${color}
 
 ${color0}${alignc}T I M E
 ${hr}{color}
