@@ -67,7 +67,7 @@ own_window_transparent = false,
 own_window_title = 'system_conky',
 own_window_type = 'override',
 
---Colors
+--Colors (Nord)
 default_color = '#1c2023',
 color0 = '#B48EAD',
 color1 = '#D8DEE9',
@@ -96,6 +96,7 @@ ${color1}Distrib:$alignr${execi 86400 echo "$(cat $(ls -atr /etc/*-release) | gr
 ${color1}Host:$alignr$nodename${color}
 ${color1}Uptime:$alignr$uptime${color}
 ${color1}Battery0: ${battery_percent BAT0}% ${alignr}${battery_bar 8,70 BAT0}${color}
+${color1}Battery1: ${battery_percent BAT1}% ${alignr}${battery_bar 8,70 BAT1}${color}
 ${color1}Disk IO: ${diskio /dev/sda}${color}
 #/boot   : ${diskio /dev/sdb2}${alignr}${diskiograph /dev/sdb1 10,100 104E8B 0077ff 750}
 ${color1}/   : ${diskio /dev/sdb2}${alignr}${diskiograph /dev/sdb2 10,100 104E8B 0077ff 750}${color}

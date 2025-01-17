@@ -8,17 +8,13 @@ Plug 'plasticboy/vim-markdown'
 Plug 'scrooloose/nerdtree'
 Plug 'kannokanno/previm'
 Plug 'tyru/open-browser.vim'
-Plug 'jistr/vim-nerdtree-tabs'
+"Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tpope/vim-fugitive'
-"Plug 'jreybert/vimagit'
 Plug 'tpope/vim-surround'
 " Automatically show Vim's complete menu while typing.
 Plug 'vim-scripts/AutoComplPop'
 Plug 'WolfgangMehner/bash-support'
-"Plug 'Valloric/YouCompleteMe'
-"Plug 'skywind3000/vim-auto-popmenu'
-"Plug 'Shougo/neocomplete.vim'
-Plug 'Shougo/deoplete.nvim'
+"Plug 'Shougo/deoplete.nvim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
 " Plug for terraform tf files
@@ -31,12 +27,21 @@ Plug 'mzlogin/vim-markdown-toc'
 Plug 'mechatroner/rainbow_csv'
 " Plug for C
 Plug 'justmao945/vim-clang'
+" Plug for go
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" Plug for python
+" 'davidhalter/jedi-vim'
+" twitter
 " All of your Plugins must be added before the following line
 call plug#end()
 
 let g:vim_markdown_folding_style_pythonic = 1
 " Don't indent when adding a list
 let g:vim_markdown_new_list_item_indent = 0
+
+"backticks always visible
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal_code_blocks = 0
 
 filetype plugin on    " required
 filetype indent on    " required
@@ -72,6 +77,8 @@ set wildmenu wildmode=list:full   "Enhanced completion functions
 set nowrap        "No wrapping of long lines
 set undolevels=100 "Number of undoable items
 set cursorline "draw a horizontal line
+"disable folding
+set nofoldenable    " disable folding
 "colorscheme molokai
 colorscheme desert
 set t_Co=256
@@ -122,8 +129,8 @@ nnoremap <silent><C-e> :NERDTreeFocusToggle<CR>
 " Show tree by default in newtab
 "let g:nerdtree_tabs_open_on_console_startup=1
 
-" If NERDTree is open when all other buffers are closed, close NERDTree together
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+"" If NERDTree is open when all other buffers are closed, close NERDTree together
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " For json settings
 autocmd BufNewFile,BufRead *.json set filetype=json
@@ -157,14 +164,14 @@ vnoremap <silent> <C-p> "0p<CR>
 autocmd BufNewFile,BufRead Dockerfile* set syntax=dockerfile
 
 " For completion deoplete plugin
-let g:deoplete#enable_at_startup = 1
-if !exists('g:deoplete#force_omni_input_patterns')
-    let g:deoplete#force_omni_input_patterns = {}
-endif
-
-let g:deoplete#force_overwrite_completefunc = 1
-let g:deoplete#force_omni_input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-let g:deoplete#force_omni_input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+"let g:deoplete#enable_at_startup = 1
+"if !exists('g:deoplete#force_omni_input_patterns')
+"    let g:deoplete#force_omni_input_patterns = {}
+"endif
+"
+"let g:deoplete#force_overwrite_completefunc = 1
+"let g:deoplete#force_omni_input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+"let g:deoplete#force_omni_input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 
 " For clang
 let g:clang_auto = 0
@@ -191,14 +198,11 @@ set statusline+=%y  " Show file type
 set statusline+=[ENC=%{&fileencoding}] " Show fileencoding
 set statusline+=[LOW=%l/%L] "Show current row count/total row count
 set statusline+=%r  " Show readonly flag
-set statusline+=\ %p%%
-set statusline+=\ %l:%c
+set statusline+=[%p%%] "Show current line percentage
+set statusline+=%#lite#[%o/%{wordcount().bytes}] "Show number of characters where current cursor characters is./ Show total number of characters
+set guifont=Source\ Code\ Pro:h10
 
-" settings for Kubernetes  
-" for yaml paste
-"set paste
-
-" vim startup measurement
+"vim startup measurement
 command! Profile call s:command_profile()
 function! s:command_profile() abort
   profile start ~/profile.txt
@@ -206,3 +210,5 @@ function! s:command_profile() abort
   profile file *
 endfunction
 
+"diffopt
+set diffopt+=context:10000
