@@ -1,3 +1,13 @@
+# メモ
+## - POWERLEVEL9K表示やめたい b.c 環境依存文字でポータビリティ下げている,ログファイルにした時、可読性が低い  
+## - プラグイン可能な限り少なくしたい b.c zsh起動時のオーバーヘッドをなくしたい  
+## -> KALIのデフォルトのzshrcがいいか？zshプラグインなしで258行  
+## -> KALIのデフォルトのzshrcに以下変更を加える形になるか  
+##    * 環境依存文字をプロンプトから消す  
+##    * `debian_chroot`など、debian系特有の環境変数をなくす  
+##    * gitのブランチ表示はしたい  
+##    * 可能であればエラーの場合のリターンコードの表示もしたい
+
 # initialize completion
 typeset -g  comppath="$HOME/.cache"
 typeset -g  compfile="$comppath/.zcompdump"
@@ -34,10 +44,8 @@ SAVEHIST=1000000
 # alias
 alias ll='ls -lha --color=auto'
 alias grep='grep --color=always'
-alias du='du -sh *'
 #alias scriptlog='script -a ./term_$(whoami)_$(date +%Y_%m%d_%H%M%S).log'
-alias history='history -E 1'
-
+alias date="date +'%Y/%m/%d %H:%M %Z'"
 # Git
 function gt() {
   is_in_git_repo || return
@@ -91,19 +99,20 @@ promptinit
 compinit -u -d "$compfile"
 compinit
 
-# Enable approximate completions
+## Enable approximate completions
 zstyle ':completion:*' completer _complete _ignored _approximate
 zstyle -e ':completion:*:approximate:*' max-errors 'reply=($((($#PREFIX+$#SUFFIX)/3)) numeric)'
-# Automatically update PATH entries
+## Automatically update PATH entries
 zstyle ':completion:*' rehash true
-# Use menu completion
+## Use menu completion
 zstyle ':completion:*' menu select
-# Verbose completion results
+## Verbose completion results
 zstyle ':completion:*' verbose true
-# Smart matching of dashed values, e.g. f-b matching foo-bar
+## Smart matching of dashed values, e.g. f-b matching foo-bar
 zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*'
-# Group results by category
+## Group results by category
 zstyle ':completion:*' group-name ''
+## Other completions
 
 # ssh keys
 eval $(ssh-agent)
@@ -171,3 +180,12 @@ export LIBVIRT_DEFAULT_URI="qemu:///system"
 
 # for kitty ssh
 export TERM=xterm-256color
+
+# settings for mountpoint-s3
+export PATH=$PATH:/opt/aws/mountpoint-s3/bin
+
+# path for scripts
+export PATH="$HOME/.local/bin:$PATH"
+
+# settings for kubectl plugin
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
