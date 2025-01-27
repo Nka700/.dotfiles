@@ -58,10 +58,10 @@ xftalpha = 1,
 
 --Windows
 own_window = true,
-own_window_argb_value = 100,
+own_window_argb_value = 255,
 own_window_argb_visual = true,
 own_window_class = conky,
-own_window_colour = '#343434',
+own_window_colour = '#2b2b2b',
 own_window_hints = 'undecorated,below,above,sticky,skip_taskbar,skip_pager',
 own_window_transparent = false,
 own_window_title = 'system_conky',
@@ -84,7 +84,7 @@ conky.text = [[
 #${color1}${texeci 1800 curl -s 'http://wttr.in/tokyo?0' | sed -n '3,7{s/\d27\[[0-9;]*m//g;s/^..//;s/ *$//;p}'}${color}
 
 ${color0}${alignc}T I M E
-${hr}{color}
+${hr}${color}
 ${color1}UTC:${alignr}${utime %Y/%m/%d %H:%M}${color}
 #JST:${alignr}${time %Y/%m/%d %H:%M}
 ${color0}${alignc}S Y S T E M    I N F O

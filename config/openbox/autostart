@@ -4,8 +4,9 @@ xfsettingsd &
 # start the panel
 tint2 &
 
-# load wallpaper
+## load wallpaper
 nitrogen --restore &
+#nitrogen --force-setter=xinerama --restore &
 
 # start conkyrc
 CONKYCONFIGS=`find ${HOME}/.config -name "*conkyrc*"`
@@ -18,9 +19,6 @@ done
 
 # disable TouchPad
 xinput disable 'SynPS/2 Synaptics TouchPad'
-
-# set a wallpaper 
-nitrogen --force-setter=xinerama --restore
 
 # start fcitx5
 fcitx5 &
