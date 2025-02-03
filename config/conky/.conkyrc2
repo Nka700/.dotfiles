@@ -15,23 +15,16 @@ default_gauge_height = 25,
 default_gauge_width = 40,
 default_graph_height = 40,
 default_graph_width = 153,
-default_shade_color = '#1c2023',
-default_outline_color = '#1c2023',
 draw_borders = false,
-draw_graph_borders = false,
+draw_graph_borders = true,
 draw_shades = true,
 draw_outline = true,
-
-gap_x=10,
-gap_y=-100,
-
-alignment="bottom_left",
-minimum_height=300,
-minimum_width=0,
+default_shade_color = '#000000',      -- default shading colour
+default_outline_color = '#000000',      -- default outline colour
 
 --Windows
 own_window = true,
-own_window_argb_value = 100,
+own_window_argb_value = 255,
 own_window_argb_visual = true,
 own_window_class = conky,
 own_window_colour = '#343434',
@@ -39,9 +32,6 @@ own_window_hints = 'undecorated,below,above,sticky,skip_taskbar,skip_pager',
 own_window_transparent = false,
 own_window_title = 'system_conky',
 own_window_type = 'override',
-
-own_window_argb_visual=true,
-own_window_argb_value=0,
 
 --Textual
 format_human_readable = true,
