@@ -79,3 +79,8 @@ CopyQ Warning [2025-02-01 07:37:21.758] <monitorClipboard-30000>: [default] QtWa
 CopyQ Warning [2025-02-01 07:37:22.271] <Server-29919>: [default] QtWarning: The X11 connection broke: I/O error (code 1)
 CopyQ Warning [2025-02-01 07:42:46.136] <Server-30680>: [default] QtWarning: The X11 connection broke (error 1). Did the X11 server die?
 CopyQ Warning [2025-02-01 07:42:46.144] <monitorClipboard-30761>: [default] QtWarning: The X11 connection broke (error 1). Did the X11 server die?
+CopyQ Warning [2025-02-03 11:14:20.561] <monitorClipboard-824>: [default] QtWarning: The X11 connection broke (error 1). Did the X11 server die?
+CopyQ Warning [2025-02-03 11:14:21.052] <Server-700>: [default] QtWarning: The X11 connection broke: I/O error (code 1)
+CopyQ Warning [2025-02-07 12:12:23.461] <Server-43826>: CopyQ server is already running.
+CopyQ Warning [2025-02-07 12:18:51.298] <Server-45837>: CopyQ server is already running.
+CopyQ Warning [2025-02-08 05:17:36.746] <Server-49637>: CopyQ server is already running.

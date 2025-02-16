@@ -33,4 +33,14 @@
       </metadata>
     </info>
   </bookmark>
+  <bookmark href="file:///home/nka700/Downloads/Screenshot_20250208_052249.png" added="2025-02-08T05:23:36.732311Z" modified="2025-02-08T05:23:36.732336Z" visited="2025-02-08T05:23:36.732314Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2025-02-08T05:23:36.732327Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
 </xbel>
