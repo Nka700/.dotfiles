@@ -189,3 +189,6 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # settings for kubectl plugin
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+#
+# settings for fzf
+eval "$(fzf --zsh)"
