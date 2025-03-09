@@ -25,3 +25,6 @@ fcitx5 &
 
 # start xfce-polkit
 #exec /usr/lib/xfce-polkit/xfce-polkit &
+
+## start clipboard manager
+copyq &
