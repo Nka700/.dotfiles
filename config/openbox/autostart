@@ -3,6 +3,8 @@ xfsettingsd &
 
 # start the panel
 tint2 &
+nm-applet &
+xfce4-power-manager &
 
 ## load wallpaper
 nitrogen --restore &
