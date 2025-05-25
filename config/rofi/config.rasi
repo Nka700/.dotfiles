@@ -1,6 +1,7 @@
 configuration {
  modi: "window,drun,ssh,combi";
- font: "Monospace 16";
+ font: "Monospace 24";
  combi-modi: "window,drun,ssh";
  }
-@theme "/usr/share/rofi/themes/arthur.rasi"
+//@theme "/usr/share/rofi/themes/arthur.rasi"
+@theme "/usr/share/rofi/themes/Adapta-Nokto.rasi"

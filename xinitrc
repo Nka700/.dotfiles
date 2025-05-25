@@ -5,14 +5,11 @@
 export XDG_CONFIG_HOME="$HOME/.config"
 export PATH="$HOME/.local/bin:$PATH"
 #
-picom -b -c &
+#picom -b -c &
 nm-applet &
 volumeicon &
+nitrogen --restore &
 xfce4-power-manager &
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-gnome-keyring-daemon --start --components=pkcs11 &
-ksuperkey -e 'Super_L=Alt_L|F1' &
-ksuperkey -e 'Super_R=Alt_L|F1' &
 xset dpms 600 900 1200
 xset r rate 350 60
 #
@@ -24,3 +21,4 @@ export GLFW_IM_MODULE=ibus
 #
 ## start clipboard manager
 copyq &
+
