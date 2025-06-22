@@ -1,5 +1,4 @@
 # メモ
-## - POWERLEVEL9K表示やめたい b.c 環境依存文字でポータビリティ下げている,ログファイルにした時、可読性が低い  
 ## - プラグイン可能な限り少なくしたい b.c zsh起動時のオーバーヘッドをなくしたい  
 ## -> KALIのデフォルトのzshrcがいいか？zshプラグインなしで258行  
 ## -> KALIのデフォルトのzshrcに以下変更を加える形になるか  
@@ -17,15 +16,6 @@ typeset -g  compfile="$comppath/.zcompdump"
 fpath=(~/.zsh/completions $fpath)
 fpath=( $fpath)
 
-# set prompt colors
-autoload -Uz colors ; colors
-PROMPT="%{$fg_bold[yellow]%}%n%{$reset_color%}@%{$fg[cyan]%}%m %{$fg_no_bold[yellow]%}%1~ %{$reset_color%}%#"
-RPROMPT="[%{$fg_no_bold[yellow]%}%?%{$reset_color%}]"
-
-# This will set the default prompt to the walters theme
-autoload -Uz promptinit
-promptinit
-prompt walters
 
 # set prompt colors
 autoload -Uz colors ; colors
@@ -47,26 +37,6 @@ alias grep='grep --color=always'
 #alias scriptlog='script -a ./term_$(whoami)_$(date +%Y_%m%d_%H%M%S).log'
 alias date="date +'%Y/%m/%d %H:%M %Z'"
 # Git
-function gt() {
-  is_in_git_repo || return
-  git tag --sort -version:refname |
-  fzf-down --multi --preview-window right:70% \
-    --preview 'git show --color=always {} | head -200'
-}
-
-function gr() {
-  is_in_git_repo || return
-  git remote -v | awk '{print $1 "\t" $2}' | uniq |
-  fzf-down --tac \
-    --preview 'git log --oneline --graph --date=short --pretty="format:%C(auto)%cd %h%d %s" {1} | head -200' |
-  cut -d$'\t' -f1
-}
-
-function gs() {
-  is_in_git_repo || return
-  git stash list | fzf-down --reverse -d: --preview 'git show --color=always {1}' |
-  cut -d: -f1
-}
 autoload -Uz vcs_info
 setopt prompt_subst
 zstyle ':vcs_info:git:*' check-for-changes true
@@ -94,10 +64,8 @@ fi
 zplug load
 
 # zsh-completions: be able to select a path name from the candidates
-autoload -U compinit promptinit && compinit -u
-promptinit
+autoload -Uz compinit
 compinit -u -d "$compfile"
-compinit
 
 ## Enable approximate completions
 zstyle ':completion:*' completer _complete _ignored _approximate
@@ -163,6 +131,18 @@ POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
 POWERLEVEL9K_SHORTEN_STRATEGY=truncate_folders
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(anaconda context dir vcs status)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
+
+# Remove environment-dependent icons and separators
+POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR=''
+POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=''
+POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=''
+POWERLEVEL9K_MULTILINE_NEWLINE_PROMPT_PREFIX=''
+POWERLEVEL9K_CONTEXT_ICON=''
+POWERLEVEL9K_ANACONDA_ICON=''
+POWERLEVEL9K_VCS_BRANCH_ICON=''
+POWERLEVEL9K_VCS_COMMIT_ICON=''
+POWERLEVEL9K_STATUS_OK_ICON=''
+POWERLEVEL9K_STATUS_ERROR_ICON=''
 
 # for kubectl completion
 source <(kubectl completion zsh)
