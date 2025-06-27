@@ -93,5 +93,8 @@ do
     sleep 3
 done
 
+# start blueman
+blueman-applet &
+
 #Exec DWM
 exec dwm

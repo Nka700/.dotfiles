@@ -166,3 +166,6 @@ export PATH=$PATH:/opt/aws/mountpoint-s3/bin
 
 # path for scripts
 export PATH="$HOME/.local/bin:$PATH"
+
+# reverse-search
+bindkey "^R" history-incremental-search-backward
