@@ -96,5 +96,8 @@ done
 # start blueman
 blueman-applet &
 
+# disable TouchPad
+xinput disable 'SynPS/2 Synaptics TouchPad'
+
 #Exec DWM
 exec dwm
