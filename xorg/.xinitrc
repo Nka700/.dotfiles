@@ -85,7 +85,7 @@ fcitx5 &
 copyq &
 
 # start conkyrc
-CONKYCONFIGS=`find ${HOME}/.config -name "*conkyrc*"`
+CONKYCONFIGS=`find ${HOME}/.dotfiles -name "*conkyrc*"`
 echo ${CONKYCONFIGS}
 for CONFIG in ${CONKYCONFIGS}
 do
