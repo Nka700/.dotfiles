@@ -61,7 +61,7 @@ nm-applet &
 #gnome-keyring-daemon --start --components=pkcs11 &
 
 #Keyboard Layout
-setxkbmap us &
+setxkbmap jp &
 
 #Display Resolution
 #xrandr --output Virtual-1 --mode 1920x1080
