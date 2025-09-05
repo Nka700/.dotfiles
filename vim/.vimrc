@@ -31,7 +31,8 @@ Plug 'justmao945/vim-clang'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " Plug for python
 " 'davidhalter/jedi-vim'
-" twitter
+"Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " All of your Plugins must be added before the following line
 call plug#end()
 
@@ -112,8 +113,6 @@ let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_auto_insert_bullets = 0
 let g:vim_markdown_new_list_item_indent = 0
 
-"press <F6> key then insert timstamp and change insert mode.
-nmap <F6> <ESC>i<C-R>=strftime("%Y/%m/%d_%H:%M")<CR>
 
 "open a NERDTree automatically when vim starts up
 "autocmd vimenter * NERDTree
@@ -157,8 +156,11 @@ if has('win32unix')
   vnoremap p "+p
 endif
 
-" "0p paste keymap
+" keymap
 vnoremap <silent> <C-p> "0p<CR>
+let mapleader = "\<Space>"
+"press <F6> key then insert timstamp and change insert mode.
+nmap <F6> <ESC>i<C-R>=strftime("%Y/%m/%d_%H:%M")<CR>
 
 " for dockerfile syntax
 autocmd BufNewFile,BufRead Dockerfile* set syntax=dockerfile
@@ -185,6 +187,12 @@ let g:clang_format_exec = 'clang-format'
 "let g:clang_c_options = '-std=c11'
 let g:clang_c_options = '-std=gnu11'
 let g:clang_cpp_options = '-std=c++11 -stdlib=libc++ --pedantic-errors'
+
+" For python
+"let g:pymode = 1
+"let g:pymode_options = 1
+"let g:pymode_virtualenv = 1
+"let g:pymode_breakpoint = 0
 
 set laststatus=2  " Show statusline always
 set statusline=
