@@ -61,20 +61,12 @@ nm-applet &
 #Keyboard Layout
 setxkbmap us &
 
-#Display Resolution
-#xrandr --output Virtual-1 --mode 1920x1080
-xrandr -s 1920x1080 &
-
-#Wallpaper
-nitrogen --restore &
-#nitrogen --force-setter=xinerama --restore &
-
 #fcitx5
 export GTK_IM_MODULE=fcitx5
 export QT_IM_MODULE=fcitx5
 export XMODIFIERS=@im=fcitx5
 export GLFW_IM_MODULE=ibus
-fcitx5 &
+fcitx5 -d &
 
 # disable TouchPad for Thinkpad
 #xinput disable 'SynPS/2 Synaptics TouchPad'
@@ -82,6 +74,8 @@ fcitx5 &
 ## start clipboard manager
 copyq &
 
+#Display Resolution
+xrandr --output DSI-1 --auto && xrandr --output DSI-1 --mode 1200x1920 --rotate right
 # start conkyrc
 CONKYCONFIGS=`find ${HOME}/.config -name "*conkyrc*"`
 echo ${CONKYCONFIGS}
@@ -91,5 +85,7 @@ do
     sleep 3
 done
 
+#Wallpaper
+nitrogen --restore &
 #Exec DWM
 exec dwm

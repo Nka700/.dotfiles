@@ -43,7 +43,7 @@ own_window_argb_visual=true,
 
 --Textual
 format_human_readable = true,
-font="Droid Sans:size=10",
+font="Droid Sans:size=15",
 max_text_width = 0,
 max_user_text = 16384,
 override_utf8_locale = true,
@@ -68,19 +68,19 @@ color3 = '#EBCB8B',
 conky.text = [[
 ${color1}${font Source Code Pro:style=Regular:size=45}\
 ${time %H:%M}${color}\
-${color1}${font Source Code Pro:style=Regular:size=15}\
+${color1}${font Source Code Pro:style=Regular:size=20}\
 ${time %p}${color}
 ${voffset -10}
 ${voffset -30}
 ${color0}${font Source Code Pro:style=Regular:size=20}\
 ${time %Y/%m/%d}${color}\
 ${voffset -5}
-${color1}${font Source Code Pro:style=Regular:size=15}\
+${color1}${font Source Code Pro:style=Regular:size=25}\
 Storage: ${fs_free /} free
 CPU0 : ${cpu cpu0}% , ${freq 0}MHz
 CPU1 : ${cpu cpu1}% , ${freq 1}MHz${color}
 ${voffset -5}
-${color1}${font Source Code Pro:style=Regular:size=10}${color}\
+${color1}${font Source Code Pro:style=Regular:size=20}${color}\
 ${color0}${alignc}T O P
 ${hr}${color}
 ${color1}ProcessName                PID     CPU%${color}

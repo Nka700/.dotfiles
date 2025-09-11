@@ -44,7 +44,7 @@ default_outline_color = '#000000',      -- default outline colour
 --Textual
 extra_newline = false,
 format_human_readable = true,
-font = 'Source Code Pro:style=Regular:size=8',
+font = 'Source Code Pro:style=Regular:size=17',
 max_text_width = 0,
 max_user_text = 16384,
 override_utf8_locale = true,
