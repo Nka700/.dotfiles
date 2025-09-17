@@ -220,3 +220,6 @@ endfunction
 
 "diffopt
 set diffopt+=context:10000
+
+"settings for ansible
+autocmd BufRead,BufNewFile */playbooks/*.yml set filetype=yaml.ansible

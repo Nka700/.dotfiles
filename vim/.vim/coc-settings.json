@@ -18,5 +18,25 @@
   "python.analysis.useLibraryCodeForTypes": true,
   "python.analysis.logLevel": "Error",
   "coc.source.buffer.enable": true,
-  "coc.source.file.enable": true
+  "coc.source.file.enable": true,
+  "yaml.format.enable": true,
+  "yaml.validate": true,
+  "yaml.hover": true,
+  "yaml.completion": true,
+  "yaml.schemaStore.enable": false,
+  "yaml.schemas": {
+    "kubernetes": [
+      "/*.k8s.yaml",
+      "/k8s/**/*.yaml"
+    ]
+  },
+  "ansible.python.interpreterPath": "ansible",
+  "ansible.validation.enabled": true,
+  "ansible.validation.lint.enabled": true,
+  "ansible.enable": true,
+  "ansible.builtin.isWithYamllint": true,
+  "ansible.completion.provideRedirectModules": true,
+  "ansible.completion.provideModuleOptionAliases": true,
+  "ansible.ansibleDoc.path": "ansible-doc",
+  "ansible.ansibleDoc.enableSplitRight": true
 }

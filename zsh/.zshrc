@@ -39,6 +39,9 @@ alias grep='grep --color=always'
 #
 ##Alias for K8s
 alias k='kubectl'
+##Alias for deepl
+alias deeplenja='deepl text --fr en --to ja'
+alias deepljaen='deepl text --fr en-us --to ja'
 
 # Git
 autoload -Uz vcs_info
@@ -160,17 +163,17 @@ PERL_LOCAL_LIB_ROOT="${HOME}/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}
 PERL_MB_OPT="--install_base \"${HOME}/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=${HOME}/perl5"; export PERL_MM_OPT;
 
-# set qemu env
+#set env variable
+## set qemu env
 export LIBVIRT_DEFAULT_URI="qemu:///system"
-
-# for kitty ssh
+## for kitty ssh
 export TERM=xterm-256color
-
-# settings for mountpoint-s3
+## settings for mountpoint-s3
 export PATH=$PATH:/opt/aws/mountpoint-s3/bin
-
-# path for scripts
+## path for scripts
 export PATH="$HOME/.local/bin:$PATH"
+## deepl auth key
+export DEEPL_AUTH_KEY=$(cat ~/.ssh/key_api_deepl)
 
 # reverse-search
 bindkey "^R" history-incremental-search-backward
