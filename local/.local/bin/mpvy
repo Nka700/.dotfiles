@@ -1,4 +1,16 @@
 #!/bin/bash -
+######################################################
+## `--stream-lavf-o=http_persistent=0`オプションについて
+## **挙動**
+## - `mpv`起動オプションに `--stream-lavf-o=http_persistent=0` を追加し、HTTPのキープアライブを無効化
+##
+## **なぜ必要か**
+## - YouTubeのHLS配信はセグメントごとにCDNホストが切り替わるらしい
+## - FFmpeg（libavformat）がキープアライブを使って前のホストの接続を再利用しようとすると、`異なるホストで接続再利用は不可` という警告が出る
+## - 音声再生自体は継続できますが、ログに毎回警告`hls: keepalive request failed for...`が出る状態だった
+######################################################
+
+
 set -o nounset                                  # Treat unset variables as an error
 
 mkdir -p "${HOME}/log"
@@ -22,5 +34,6 @@ else
       --shuffle \
       --ytdl-format=bestaudio \
       --script-opts=ytdl_hook-ytdl_path=yt-dlp \
+      --stream-lavf-o=http_persistent=0 \
       --term-playing-msg='Title: ${media-title}' "$playlist_url"
 fi

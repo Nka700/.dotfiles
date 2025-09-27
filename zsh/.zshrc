@@ -41,7 +41,7 @@ alias grep='grep --color=always'
 alias k='kubectl'
 ##Alias for deepl
 alias deeplenja='deepl text --fr en --to ja'
-alias deepljaen='deepl text --fr en-us --to ja'
+alias deepljaen='deepl text --fr ja --to en-us'
 
 # Git
 autoload -Uz vcs_info
