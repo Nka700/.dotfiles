@@ -83,9 +83,6 @@ set nofoldenable    " disable folding
 "colorscheme molokai
 colorscheme desert
 set t_Co=256
-"set shortcut keys
-nmap <C-S> :w<CR>
-imap <C-S> <Esc>:w<CR>a
 
 "For AutoCompletion
 let g:apc_enable_ft = {'*':1}
@@ -223,3 +220,4 @@ set diffopt+=context:10000
 
 "settings for ansible
 autocmd BufRead,BufNewFile */playbooks/*.yml set filetype=yaml.ansible
+
