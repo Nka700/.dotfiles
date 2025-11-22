@@ -1,0 +1,40 @@
+#!/bin/bash
+# CLI-based man page translator using DeepL
+
+# --- Settings ---
+MAX_CHARS=4500
+
+# --- Check deepl CLI ---
+if ! command -v deepl &> /dev/null; then
+    echo "[ERROR] deepl CLI not found. Please install it with: pip install deepl"
+    exit 1
+fi
+
+# --- Check argument ---
+if [ $# -eq 0 ]; then
+    echo "[USAGE] man2ja [COMMAND]"
+    exit 1
+fi
+
+# --- Get man page and strip formatting ---
+RAW_TEXT=$(man "$1" | col -b)
+
+# --- Check if man output was empty ---
+if [ -z "$RAW_TEXT" ]; then
+    echo "[ERROR] Failed to fetch man page for: $1"
+    exit 1
+fi
+
+# --- Translate in chunks ---
+i=0
+while [ -n "$RAW_TEXT" ]; do
+    CHUNK="${RAW_TEXT:0:$MAX_CHARS}"
+    RAW_TEXT="${RAW_TEXT:$MAX_CHARS}"
+
+    if [ -z "$CHUNK" ]; then
+        continue
+    fi
+
+    echo -e "\n===== Part $((++i)) =====\n"
+    deepl text --from en --to ja -- "$CHUNK"
+done

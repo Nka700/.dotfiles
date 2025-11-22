@@ -1,0 +1,141 @@
+conky.config = {
+
+--Various settings
+background = true,
+cpu_avg_samples = 2,
+diskio_avg_samples = 10,
+double_buffer = true,
+if_up_strictness = 'address',
+net_avg_samples = 2,
+no_buffers = true,
+temperature_unit = 'celsius',
+text_buffer_size = 2048,
+update_interval = 1,
+imlib_cache_size = 0,
+
+--Placement
+alignment = 'top_right',
+gap_x = 20,
+gap_y = 45,
+minimum_height = 200,
+minimum_width = 300,
+maximum_width = 300,
+
+
+--Graphical
+border_inner_margin = 10,
+border_outer_margin = 2,
+border_width = 1,
+default_bar_width = 220,
+default_bar_height = 10,
+default_gauge_height = 25,
+default_gauge_width = 40,
+default_graph_height = 40,
+default_graph_width = 153,
+default_shade_color = '#1c2023',
+default_outline_color = '#1c2023',
+draw_borders = false,
+draw_graph_borders = true,
+draw_shades = true,
+draw_outline = true,
+default_shade_color = '#000000',      -- default shading colour
+default_outline_color = '#000000',      -- default outline colour
+
+--Textual
+extra_newline = false,
+format_human_readable = true,
+font = 'Source Code Pro:style=Regular:size=8',
+max_text_width = 0,
+max_user_text = 16384,
+override_utf8_locale = true,
+short_units = true,
+top_name_width = 21,
+top_name_verbose = false,
+uppercase = false,
+use_spacer = 'none',
+use_xft = true,
+xftalpha = 1,
+
+--Windows
+own_window = true,
+own_window_argb_value = 255,
+own_window_argb_visual = true,
+own_window_class = conky,
+own_window_colour = '#2a2a2a',
+own_window_hints = 'undecorated,below,above,sticky,skip_taskbar,skip_pager',
+own_window_transparent = false,
+own_window_title = 'system_conky',
+own_window_type = 'override',
+
+--Colors (Nord)
+default_color = '#1c2023',
+color0 = '#B48EAD',
+color1 = '#D8DEE9',
+color2 = '#88C0D0',
+color3 = '#EBCB8B',
+
+--Others(append)
+xinerama_head = 0,
+};
+
+conky.text = [[
+#${color0}${alignc}W H E A T H E R
+#${hr}${color}
+#${color1}${texeci 1800 curl -s 'http://wttr.in/tokyo?0' | sed -n '3,7{s/\d27\[[0-9;]*m//g;s/^..//;s/ *$//;p}'}${color}
+
+${color0}${alignc}T I M E${color}
+${color0}${hr}${color}
+${color1}UTC:${alignr}${utime %Y/%m/%d %H:%M}${color}
+#JST:${alignr}${time %Y/%m/%d %H:%M}
+${color0}${alignc}S Y S T E M    I N F O${color}
+${color0}${hr}${color}
+${color0}${font OpenLogos:size=30}t${font}${color}
+${color1}Kernel:$alignr${sysname}${kernel}${machine} ${color}
+${color0}${font OpenLogos:size=30}B${font}${color}
+${color1}Distrib:$alignr${execi 86400 echo "$(cat $(ls -atr /etc/*-release) | grep "PRETTY_NAME" | cut -d= -f2) $(cat $(ls -atr /etc/*-release) | grep "VERSION_ID" | cut -d= -f2)"}${color}
+${color1}Host:$alignr$nodename${color}
+${color1}Uptime:$alignr$uptime${color}
+${color1}Battery0: ${battery_percent BAT0}% ${alignr}${battery_bar 8,70 BAT0}${color}
+#${color1}Battery1: ${battery_percent BAT1}% ${alignr}${battery_bar 8,70 BAT1}${color}
+${color1}Disk IO: ${diskio /dev/sda}${color}
+#/boot   : ${diskio /dev/sdb2}${alignr}${diskiograph /dev/sdb1 10,100 104E8B 0077ff 750}
+${color1}/   : ${diskio /dev/sdb2}${alignr}${diskiograph /dev/sdb2 10,100 104E8B 0077ff 750}${color}
+#/data   : ${diskio /dev/sda}${alignr}${diskiograph /dev/sda 10,100 104E8B 0077ff 750}
+${color1} ALL : ${diskio}${alignr}${diskiograph 10,100 104E8B 0077ff 750}${color}
+${color0}${goto 60}Used${alignr}Size${color}
+${color1}Root${goto 60}${fs_used /}${alignr}${fs_size /}${color}
+#Data${goto 60}${fs_used /data}${alignr}${fs_size /data}
+${color1}RAM:$alignr $memperc% ($mem/$memmax)
+$membar${color}
+${color1}SWAP:$alignr $swapperc% ($swap/$swapmax)${color}
+${color1}${swapbar}${color}
+${color1}CPU:${execi 1000 cat /proc/cpuinfo | grep 'model name' | cut -c 13-40 | uniq}${color}
+${color1}CPU temperature :${execi 1000 sensors | grep 'Package id' | awk '{print $4}'}${color}
+${color1}avg:${goto 60}${cpu cpu0}%${alignr}${freq_g}${color}
+#Processes: $alignr ${execi 1000 ps aux | wc -l}
+${color0}${alignc}N E T W O R K${color}
+${color0}${hr}${color}
+${color0}Local IPs:${alignr}External IP:${color}
+${color1}${execi 1000 ip a | grep inet | grep -vw lo | grep -v inet6 | cut -d \/ -f1 | sed 's/[^0-9\.]*//g'}  ${alignr}${execi 1000  wget -q -O- http://ipecho.net/plain; echo}${color}
+${voffset -10}${if_up eth0}
+↑ UP: ${upspeedf eth0} kb/s $alignr ${totalup eth0}${alignr}
+${upspeedgraph eth0 30,290 000000 FFBF00}
+↓ Down: ${downspeedf eth0} kb/s $alignr ${totaldown eth0}
+${downspeedgraph eth0 30,290 000000 00FF00} ${endif}${if_up eth1}
+↑ UP: ${upspeedf eth1} kb/s $alignr ${totalup eth1}${alignr}
+${upspeedgraph eth1 30,290 000000 FFBF00}
+↓ Down: ${downspeedf eth1} kb/s $alignr ${totaldown eth1}
+${downspeedgraph eth1 30,290 000000 00FF00} ${endif}${if_up wlan0}
+↑ UP: ${upspeedf wlan0} kb/s $alignr ${totalup wlan0}${alignr}
+${upspeedgraph wlan0 30,290 000000 FFBF00}
+↓ Down: ${downspeedf wlan0} kb/s $alignr ${totaldown wlan0}
+${downspeedgraph wlan0 30,290 000000 00FF00} ${endif}${if_up wlan1}
+↑ UP: ${upspeedf wlan1} kb/s $alignr ${totalup wlan1}${alignr}
+${upspeedgraph wlan1 30,290 000000 FFBF00}
+↓ Down: ${downspeedf wlan1} kb/s $alignr ${totaldown wlan1}
+${downspeedgraph wlan1 30,290 000000 00FF00} ${endif}${if_up wlp3s0}
+${color1}↑ UP: ${upspeedf wlp3s0} kb/s $alignr ${totalup wlp3s0}${color}
+${color0}${upspeedgraph wlp3s0 30,290 000000 FFBF00}${color}
+${color1}↓ Down: ${downspeedf wlp3s0} kb/s $alignr ${totaldown wlp3s0}${color}
+${color0}${downspeedgraph wlp3s0 30,290 000000 00FF00} ${endif}${if_up wlp3s0}${endif}${color}
+]];

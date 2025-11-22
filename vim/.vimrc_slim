@@ -12,10 +12,10 @@ set fileencodings=utf-8,cp932
 set fileformats=unix,dos,mac
 set cursorline  "Highlight the current line.
 set smartindent "Smart indentation
-syntax on       "Show syntax color
-set relativenumber      "Show line number(relative)
-set number      "Show line number
-set incsearch   "Incremental search
+syntax on       "Show syntax color 
+set relativenumber      "Show line number(relative) 
+set number      "Show line number 
+set incsearch   "Incremental search 
 set ignorecase  " Search regardless of case
 set showmatch   "Emphasize the corresponding parentheses when entering parentheses
 set showmode    "Show mode
@@ -39,14 +39,14 @@ colorscheme desert
 set t_Co=256
 
 "Change settings by file extension
-autocmd BufNewFile,BufRead *.{md,txt} silent setlocal filetype=markdown
+autocmd BufNewFile,BufRead *.{md,txt} silent setlocal filetype=markdown 
 autocmd BufNewFile,BufRead *.{md,txt} silent
 "vim background transparency
 highlight Normal ctermbg=none
 highlight NonText ctermbg=none
 highlight LineNr ctermbg=none
 highlight Folded ctermbg=none
-highlight EndOfBuffer ctermbg=none
+highlight EndOfBuffer ctermbg=none 
 
 "settings for kannokanno/previm?
 autocmd BufRead,BufNewFile *.md silent set filetype=markdown
@@ -54,7 +54,7 @@ autocmd BufRead,BufNewFile *.md silent set filetype=markdown
 "press <F6> key then insert timstamp and change insert mode.
 nmap <F6> <ESC>i<C-R>=strftime("%Y/%m/%d_%H:%M")<CR>
 
-" Visualization of double-byte spaces, spaces at the end of lines, and tabs.
+" Visualization of double-byte spaces, spaces at the end of lines, and tabs. 
 set list
 set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%
 
@@ -113,5 +113,3 @@ endfunction
 
 "diffopt
 set diffopt+=context:10000
-
-
