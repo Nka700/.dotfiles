@@ -50,20 +50,18 @@ if [ -d $xinitdir/xinitrc.d ] ; then
  unset f
 fi
 
-#DWM Status
-exec slstatus &
-#NetworkManager
-nm-applet &
-#xfce4-power-manager &
-#/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-#gnome-keyring-daemon --start --components=pkcs11 &
-
 #Display Resolution
 #xrandr --output Virtual-1 --mode 1920x1080
 xrandr -s 1920x1080 &
 
 #Wallpaper
 nitrogen --restore &
+
+
+# If don't have a D-Bus session, create one.
+if [ -z "$DBUS_SESSION_BUS_ADDRESS" ]; then
+  eval "$(dbus-launch --sh-syntax --exit-with-session)"
+fi
 
 #Keyboard Layout
 setxkbmap -model jp106 -layout jp &
@@ -73,7 +71,7 @@ export GTK_IM_MODULE=fcitx5
 export QT_IM_MODULE=fcitx5
 export XMODIFIERS=@im=fcitx5
 export GLFW_IM_MODULE=ibus
-fcitx5 -d &
+#fcitx5 -d &
 
 # disable TouchPad for Thinkpad
 #xinput disable 'SynPS/2 Synaptics TouchPad'
@@ -93,6 +91,8 @@ done
 # start blueman
 blueman-applet &
 
-#Exec DWM
-exec dwm
-#exec dbus-run-session -- dwm
+#DWM Status
+exec slstatus &
+#NetworkManager
+nm-applet &
+
