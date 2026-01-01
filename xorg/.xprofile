@@ -1,16 +1,16 @@
 #!/bin/sh
 
-#xrdb=xrdb
-#xinitdir=/etc/X11/xinit
-#xclock=xclock
-#xterm=xterm
-#twm=twm
-#xmodmap=xmodmap
-#
-#userresources=$HOME/.Xresources
-#usermodmap=$HOME/.Xmodmap
-#sysresources=$xinitdir/.Xresources
-#sysmodmap=$xinitdir/.Xmodmap
+xrdb=xrdb
+xinitdir=/etc/X11/xinit
+xclock=xclock
+xterm=xterm
+twm=twm
+xmodmap=xmodmap
+
+userresources=$HOME/.Xresources
+usermodmap=$HOME/.Xmodmap
+sysresources=$xinitdir/.Xresources
+sysmodmap=$xinitdir/.Xmodmap
 
 # merge in defaults and keymaps
 
@@ -74,7 +74,7 @@ export GTK_IM_MODULE=fcitx5
 export QT_IM_MODULE=fcitx5
 export XMODIFIERS=@im=fcitx5
 export GLFW_IM_MODULE=ibus
-fcitx5 &
+fcitx5 -d &
 
 # disable TouchPad for Thinkpad
 #xinput disable 'SynPS/2 Synaptics TouchPad'
@@ -97,5 +97,3 @@ blueman-applet &
 # disable TouchPad
 xinput disable 'SynPS/2 Synaptics TouchPad'
 
-#Exec DWM
-exec dwm

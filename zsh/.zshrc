@@ -120,20 +120,20 @@ export PATH="$HOME/.tfenv/bin:$PATH"
 # for anaconda 
 ## >>> conda initialize >>>
 ### !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$(${HOME}/anaconda3/bin/conda 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "${HOME}/anaconda3/etc/profile.d/conda.sh" ]; then
-# . "${HOME}/anaconda3/etc/profile.d/conda.sh"  # commented out by conda initialize
-    else
-# export PATH="${HOME}/anaconda3/bin:$PATH"  # commented out by conda initialize
-    fi
-fi
-unset __conda_setup
-## <<< conda initialize <<<
-_path=$CONDA_ENV_PATH$CONDA_PREFIX
-_path=$CONDA_DEFAULT_ENV
+#__conda_setup="$(${HOME}/anaconda3/bin/conda 'shell.zsh' 'hook' 2> /dev/null)"
+#if [ $? -eq 0 ]; then
+#    eval "$__conda_setup"
+#else
+#    if [ -f "${HOME}/anaconda3/etc/profile.d/conda.sh" ]; then
+## . "${HOME}/anaconda3/etc/profile.d/conda.sh"  # commented out by conda initialize
+#    else
+## export PATH="${HOME}/anaconda3/bin:$PATH"  # commented out by conda initialize
+#    fi
+#fi
+#unset __conda_setup
+### <<< conda initialize <<<
+#_path=$CONDA_ENV_PATH$CONDA_PREFIX
+#_path=$CONDA_DEFAULT_ENV
 
 # POWERLEVEL9K settings
 POWERLEVEL9K_ANACONDA_SHOW_PYTHON_VERSION=false
