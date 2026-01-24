@@ -84,8 +84,8 @@ zstyle ':completion:*' group-name ''
 ## Other completions
 
 # ssh keys
-eval $(ssh-agent)
-ssh-add ${HOME}/.ssh/*.pem
+eval $(ssh-agent) 1> /dev/null 2> /dev/null
+ssh-add ${HOME}/.ssh/*.pem 1> /dev/null 2> /dev/null
 
 # awscli autocompetion
 autoload bashcompinit
@@ -149,7 +149,7 @@ POWERLEVEL9K_STATUS_ERROR_ICON=''
 source <(kubectl completion zsh)
 
 # neofetch
-neofetch
+fastfetch
 
 PERL5LIB="${HOME}/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="${HOME}/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
