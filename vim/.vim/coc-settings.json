@@ -38,5 +38,16 @@
   "ansible.completion.provideRedirectModules": true,
   "ansible.completion.provideModuleOptionAliases": true,
   "ansible.ansibleDoc.path": "ansible-doc",
-  "ansible.ansibleDoc.enableSplitRight": true
+  "ansible.ansibleDoc.enableSplitRight": true,
+  "clangd.path": "/usr/sbin/clangd",
+  "clangd.arguments": [
+    "--background-index",
+    "--clang-tidy",
+    "--completion-style=detailed",
+    "--header-insertion=iwyu"
+  ],
+  "clangd.trace.server": "off",
+  "inlayHint.enable": false,
+  "clangd.inlayHints.enable": false,
+  "coc.preferences.formatOnSaveFiletypes": ["c", "cpp"]
 }
