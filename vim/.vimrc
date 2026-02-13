@@ -74,6 +74,7 @@ set backspace=indent,eol,start
 set title
 set ruler
 set nowrap
+set wrapscan
 set wildmenu
 set wildmode=list:full
 set undolevels=100
@@ -92,7 +93,7 @@ highlight Folded      ctermbg=none
 highlight EndOfBuffer ctermbg=none
 
 "---------------------------
-" Tabs / indent (global)
+" Tabs / indent
 "---------------------------
 set expandtab              " Tab -> spaces
 set tabstop=2
@@ -100,7 +101,7 @@ set shiftwidth=2
 set softtabstop=2
 
 "---------------------------
-" Visible whitespace
+" Whitespace visualization
 "---------------------------
 set list
 set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%
@@ -108,8 +109,15 @@ set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%
 "---------------------------
 " Clipboard
 "---------------------------
-set clipboard&
-set clipboard^=unnamedplus
+" Enable clipboard only if supported
+if has('clipboard')
+  " Prefer unnamedplus if available; otherwise unnamed
+  try
+    set clipboard^=unnamedplus
+  catch
+    set clipboard^=unnamed
+  endtry
+endif
 
 "=========================================================
 " Markdown (plasticboy/vim-markdown)
