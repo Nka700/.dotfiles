@@ -73,5 +73,12 @@
     "--header-insertion=iwyu",
     "--pch-storage=memory"
   ],
-  "clangd.inlayHints.enable": false
+  "clangd.inlayHints.enable": false,
+  "markdownlint.config": {
+    "MD012": false,
+    "MD022": false,
+    "MD025": false,
+    "MD032": false,
+    "MD033": false
+  }
 }
