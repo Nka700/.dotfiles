@@ -4,4 +4,4 @@
 
 #Exec DWM
 #exec dwm
-exec dbus-run-session -- sh -c 'fcitx5 -d & exec dwm'
+exec dbus-run-session -- sh -c 'exec dwm & fcitx5 -d'
