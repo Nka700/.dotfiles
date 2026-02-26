@@ -64,7 +64,7 @@ if [ -z "$DBUS_SESSION_BUS_ADDRESS" ]; then
 fi
 
 #Keyboard Layout
-setxkbmap -model jp106 -layout jp &
+setxkbmap us &
 
 #fcitx5
 export GTK_IM_MODULE=fcitx5
@@ -79,6 +79,8 @@ export GLFW_IM_MODULE=ibus
 ## start clipboard manager
 copyq &
 
+#Display Resolution
+xrandr --output DSI-1 --auto && xrandr --output DSI-1 --mode 1200x1920 --rotate right
 # start conkyrc
 CONKYCONFIGS=`find ${HOME}/.dotfiles -name "*conkyrc*"`
 echo ${CONKYCONFIGS}
