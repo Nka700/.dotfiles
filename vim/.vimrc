@@ -31,7 +31,8 @@ Plug 'justmao945/vim-clang'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " Plug for python
 " 'davidhalter/jedi-vim'
-" twitter
+"Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " All of your Plugins must be added before the following line
 call plug#end()
 
@@ -82,9 +83,6 @@ set nofoldenable    " disable folding
 "colorscheme molokai
 colorscheme desert
 set t_Co=256
-"set shortcut keys
-nmap <C-S> :w<CR>
-imap <C-S> <Esc>:w<CR>a
 
 "For AutoCompletion
 let g:apc_enable_ft = {'*':1}
@@ -159,6 +157,9 @@ endif
 
 " "0p paste keymap
 vnoremap <silent> <C-p> "0p<CR>
+let mapleader = "\<Space>"
+"press <F6> key then insert timstamp and change insert mode.
+nmap <F6> <ESC>i<C-R>=strftime("%Y/%m/%d_%H:%M")<CR>
 
 " for dockerfile syntax
 autocmd BufNewFile,BufRead Dockerfile* set syntax=dockerfile
@@ -212,3 +213,7 @@ endfunction
 
 "diffopt
 set diffopt+=context:10000
+
+"settings for ansible
+autocmd BufRead,BufNewFile */playbooks/*.yml set filetype=yaml.ansible
+

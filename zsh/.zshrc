@@ -36,7 +36,16 @@ SAVEHIST=1000000
 alias ll='ls -lha --color=auto'
 alias grep='grep --color=always'
 #alias scriptlog='script -a ./term_$(whoami)_$(date +%Y_%m%d_%H%M%S).log'
-alias date="date +'%Y/%m/%d %H:%M %Z'"
+#alias date="date +'%Y/%m/%d %H:%M %Z'"
+#
+##Alias for K8s
+alias k='kubectl'
+##Alias for deepl
+alias deeplenja='deepl text --fr en --to ja'
+alias deepljaen='deepl text --fr ja --to en-us'
+##Alias for virtmanager
+alias virt-manager='env PATH=/sbin:$PATH virt-manager'
+
 # Git
 autoload -Uz vcs_info
 setopt prompt_subst
@@ -86,6 +95,7 @@ zstyle ':completion:*' group-name ''
 # ssh keys
 eval $(ssh-agent) 1> /dev/null 2> /dev/null
 ssh-add ${HOME}/.ssh/*.pem 1> /dev/null 2> /dev/null
+
 
 # awscli autocompetion
 autoload bashcompinit
@@ -156,17 +166,20 @@ PERL_LOCAL_LIB_ROOT="${HOME}/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}
 PERL_MB_OPT="--install_base \"${HOME}/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=${HOME}/perl5"; export PERL_MM_OPT;
 
-# set qemu env
+#set env variable
+## set qemu env
 export LIBVIRT_DEFAULT_URI="qemu:///system"
-
-# for kitty ssh
+## for kitty ssh
 export TERM=xterm-256color
-
-# settings for mountpoint-s3
+## settings for mountpoint-s3
 export PATH=$PATH:/opt/aws/mountpoint-s3/bin
-
-# path for scripts
+## path for scripts
 export PATH="$HOME/.local/bin:$PATH"
+## deepl auth key
+export DEEPL_AUTH_KEY=$(cat ~/.ssh/key_api_deepl)
+## path for pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PYENV_ROOT/shims:$PATH"
 
 # reverse-search
 bindkey "^R" history-incremental-search-backward
