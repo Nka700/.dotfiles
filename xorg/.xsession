@@ -1,16 +1,16 @@
 #!/bin/sh
 
-xrdb=xrdb
-xinitdir=/etc/X11/xinit
-xclock=xclock
-xterm=xterm
-twm=twm
-xmodmap=xmodmap
-
-userresources=$HOME/.Xresources
-usermodmap=$HOME/.Xmodmap
-sysresources=$xinitdir/.Xresources
-sysmodmap=$xinitdir/.Xmodmap
+#xrdb=xrdb
+#xinitdir=/etc/X11/xinit
+#xclock=xclock
+#xterm=xterm
+#twm=twm
+#xmodmap=xmodmap
+#
+#userresources=$HOME/.Xresources
+#usermodmap=$HOME/.Xmodmap
+#sysresources=$xinitdir/.Xresources
+#sysmodmap=$xinitdir/.Xmodmap
 
 # merge in defaults and keymaps
 
@@ -50,28 +50,31 @@ if [ -d $xinitdir/xinitrc.d ] ; then
  unset f
 fi
 
+#DWM Status
+exec slstatus &
+#NetworkManager
+nm-applet &
+#xfce4-power-manager &
+#/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+#gnome-keyring-daemon --start --components=pkcs11 &
+
+#Keyboard Layout
+setxkbmap us &
+
 #Display Resolution
 #xrandr --output Virtual-1 --mode 1920x1080
 xrandr -s 1920x1080 &
 
 #Wallpaper
 nitrogen --restore &
-
-
-# If don't have a D-Bus session, create one.
-if [ -z "$DBUS_SESSION_BUS_ADDRESS" ]; then
-  eval "$(dbus-launch --sh-syntax --exit-with-session)"
-fi
-
-#Keyboard Layout
-setxkbmap us &
+#nitrogen --force-setter=xinerama --restore &
 
 #fcitx5
 export GTK_IM_MODULE=fcitx5
 export QT_IM_MODULE=fcitx5
 export XMODIFIERS=@im=fcitx5
 export GLFW_IM_MODULE=ibus
-#fcitx5 -d &
+fcitx5 &
 
 # disable TouchPad for Thinkpad
 #xinput disable 'SynPS/2 Synaptics TouchPad'
@@ -79,8 +82,6 @@ export GLFW_IM_MODULE=ibus
 ## start clipboard manager
 copyq &
 
-#Display Resolution
-xrandr --output DSI-1 --auto && xrandr --output DSI-1 --mode 1200x1920 --rotate right
 # start conkyrc
 CONKYCONFIGS=`find ${HOME}/.dotfiles -name "*conkyrc*"`
 echo ${CONKYCONFIGS}
@@ -93,8 +94,8 @@ done
 # start blueman
 blueman-applet &
 
-#DWM Status
-exec slstatus &
-#NetworkManager
-nm-applet &
+# disable TouchPad
+xinput disable 'SynPS/2 Synaptics TouchPad'
 
+#Exec DWM
+exec dwm
