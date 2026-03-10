@@ -45,12 +45,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 "---------------------------
-" Filetype / syntax
-"---------------------------
-filetype plugin indent on
-syntax on
-
-"---------------------------
 " Encoding
 "---------------------------
 let $LANG='ja_JP.UTF-8'
@@ -77,6 +71,8 @@ set nowrap
 set wrapscan
 set wildmenu
 set wildmode=list:full
+set wildignore-=.*
+set wildignore-=*/.*
 set undolevels=100
 set noswapfile
 set nobackup
@@ -128,11 +124,29 @@ let g:vim_markdown_auto_insert_bullets = 0
 let g:vim_markdown_new_list_item_indent = 0
 let g:vim_markdown_conceal = 0
 let g:vim_markdown_conceal_code_blocks = 0
+let g:vim_markdown_fenced_languages = [
+  \ 'python',
+  \ 'sql',
+  \ 'c',
+  \ 'cpp',
+  \ 'go',
+  \ 'bash=sh',
+  \ 'yaml',
+  \ 'json',
+  \ 'terraform',
+  \ 'hcl'
+\ ]
 
 "=========================================================
 " JSON
 "=========================================================
 let g:vim_json_syntax_conceal = 0
+
+"---------------------------
+" Filetype / syntax
+"---------------------------
+filetype plugin indent on
+syntax on
 
 "=========================================================
 " NERDTree (manual only, single tree shared across tabs)
@@ -178,10 +192,11 @@ nmap <F6> <ESC>i<C-R>=strftime("%Y/%m/%d_%H:%M")<CR>
 "=========================================================
 augroup my_filetypes
   autocmd!
-  autocmd BufRead,BufNewFile *.md,*.txt          setlocal filetype=markdown
-  autocmd BufRead,BufNewFile *.json              setlocal filetype=json
-  autocmd BufRead,BufNewFile Dockerfile*         setlocal syntax=dockerfile
-  autocmd BufRead,BufNewFile */playbooks/*.yml   setlocal filetype=yaml.ansible
+  " *.md は標準判定に任せる（消す）
+  autocmd BufRead,BufNewFile *.txt              setfiletype markdown
+  autocmd BufRead,BufNewFile *.json             setfiletype json
+  autocmd BufRead,BufNewFile Dockerfile*        set syntax=dockerfile
+  autocmd BufRead,BufNewFile */playbooks/*.yml  setfiletype yaml.ansible
 augroup END
 
 "=========================================================
