@@ -1,0 +1,7 @@
+coc-markdownlint
+coc-json
+coc-yaml
+coc-terraform
+coc-pyright
+coc-clangd
+@yaegassy/coc-ansible

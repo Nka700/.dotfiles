@@ -1,3 +1,4 @@
+
 # メモ
 ## - プラグイン可能な限り少なくしたい b.c zsh起動時のオーバーヘッドをなくしたい  
 ## -> KALIのデフォルトのzshrcがいいか？zshプラグインなしで258行  
@@ -176,6 +177,9 @@ export PATH=$PATH:/opt/aws/mountpoint-s3/bin
 export PATH="$HOME/.local/bin:$PATH"
 ## deepl auth key
 export DEEPL_AUTH_KEY=$(cat ~/.ssh/key_api_deepl)
+## path for pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PYENV_ROOT/shims:$PATH"
 
 # reverse-search
 bindkey "^R" history-incremental-search-backward
