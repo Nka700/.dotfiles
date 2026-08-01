@@ -94,6 +94,11 @@ complete -C '/usr/local/bin/aws_completer' aws
 # settings for terraform installed by `tfenv install`
 export PATH="$HOME/.tfenv/bin:$PATH"
 
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
+
 # for gem's env
 #export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 
