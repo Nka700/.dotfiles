@@ -1,20 +1,22 @@
 #!/bin/sh
 
+unset SESSION_MANAGER
+unset DBUS_SESSION_BUS_ADDRESS
+
+export LANG=ja_JP.UTF-8
+export LC_CTYPE=ja_JP.UTF-8
+
 export XDG_CONFIG_HOME="$HOME/.config"
 export PATH="$HOME/.local/bin:$PATH"
 
-# NetworkManager applet
-nm-applet &
-
-# Keyboard Layout
-setxkbmap jp &
-
-# fcitx5 (Japanese input)
-export GTK_IM_MODULE=fcitx5
-export QT_IM_MODULE=fcitx5
-export XMODIFIERS=@im=fcitx5
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+export SDL_IM_MODULE=fcitx
 export GLFW_IM_MODULE=ibus
-fcitx5 &
 
-# Start XFCE4 session
-exec startxfce4
+exec dbus-launch --exit-with-session sh -c '
+  setxkbmap -layout jp -model pc105 2>/tmp/setxkbmap.log || true
+  fcitx5 -d 2>/tmp/fcitx5.log || true
+  exec startxfce4
+'
