@@ -64,7 +64,7 @@ if [ -z "$DBUS_SESSION_BUS_ADDRESS" ]; then
 fi
 
 #Keyboard Layout
-setxkbmap us &
+#setxkbmap us
 
 #fcitx5
 export GTK_IM_MODULE=fcitx5
