@@ -1,19 +1,4 @@
 #!/bin/sh
-
-#xrdb=xrdb
-#xinitdir=/etc/X11/xinit
-#xclock=xclock
-#xterm=xterm
-#twm=twm
-#xmodmap=xmodmap
-#
-#userresources=$HOME/.Xresources
-#usermodmap=$HOME/.Xmodmap
-#sysresources=$xinitdir/.Xresources
-#sysmodmap=$xinitdir/.Xmodmap
-
-# merge in defaults and keymaps
-
 export XDG_CONFIG_HOME="$HOME/.config"
 export PATH="$HOME/.local/bin:$PATH"
 
@@ -25,20 +10,12 @@ if [ -f $sysresources ]; then
     fi
 fi
 
-if [ -f $sysmodmap ]; then
-    $xmodmap $sysmodmap
-fi
-
 if [ -f "$userresources" ]; then
     if [ -x /usr/bin/cpp ] ; then
         $xrdb -merge "$userresources"
     else
         $xrdb -nocpp -merge "$userresources"
     fi
-fi
-
-if [ -f "$usermodmap" ]; then
-    $xmodmap "$usermodmap"
 fi
 
 # start some nice programs
@@ -57,9 +34,6 @@ nm-applet &
 #xfce4-power-manager &
 #/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 #gnome-keyring-daemon --start --components=pkcs11 &
-
-#Keyboard Layout
-setxkbmap us &
 
 #Display Resolution
 #xrandr --output Virtual-1 --mode 1920x1080
@@ -95,7 +69,12 @@ done
 blueman-applet &
 
 # disable TouchPad
-xinput disable 'SynPS/2 Synaptics TouchPad'
+#xinput disable 'SynPS/2 Synaptics TouchPad'
+
+#Keyboard Layout
+setxkbmap -rules evdev -model jp106 -layout jp -variant '' -option ''
+#setxkbmap us
 
 #Exec DWM
 exec dwm
+

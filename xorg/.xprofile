@@ -5,12 +5,9 @@ xinitdir=/etc/X11/xinit
 xclock=xclock
 xterm=xterm
 twm=twm
-xmodmap=xmodmap
 
 userresources=$HOME/.Xresources
-usermodmap=$HOME/.Xmodmap
 sysresources=$xinitdir/.Xresources
-sysmodmap=$xinitdir/.Xmodmap
 
 # merge in defaults and keymaps
 
@@ -25,20 +22,12 @@ if [ -f $sysresources ]; then
     fi
 fi
 
-if [ -f $sysmodmap ]; then
-    $xmodmap $sysmodmap
-fi
-
 if [ -f "$userresources" ]; then
     if [ -x /usr/bin/cpp ] ; then
         $xrdb -merge "$userresources"
     else
         $xrdb -nocpp -merge "$userresources"
     fi
-fi
-
-if [ -f "$usermodmap" ]; then
-    $xmodmap "$usermodmap"
 fi
 
 # start some nice programs
@@ -62,9 +51,6 @@ nitrogen --restore &
 if [ -z "$DBUS_SESSION_BUS_ADDRESS" ]; then
   eval "$(dbus-launch --sh-syntax --exit-with-session)"
 fi
-
-#Keyboard Layout
-#setxkbmap us
 
 #fcitx5
 export GTK_IM_MODULE=fcitx5
