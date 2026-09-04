@@ -275,3 +275,5 @@ tnoremap <Leader>w <C-\><C-n><C-w>w
 
 "補完設定
 set wildmenu
+
+colorscheme desert
