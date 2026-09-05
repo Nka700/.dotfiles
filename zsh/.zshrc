@@ -17,7 +17,6 @@ typeset -g  compfile="$comppath/.zcompdump"
 fpath=(~/.zsh/completions $fpath)
 fpath=( $fpath)
 
-
 # set prompt colors
 autoload -Uz colors ; colors
 PROMPT="%{$fg_bold[yellow]%}%n%{$reset_color%}@%{$fg[cyan]%}%m %{$fg_no_bold[yellow]%}%1~ %{$reset_color%}%#"
@@ -35,9 +34,7 @@ SAVEHIST=1000000
 # alias
 alias ll='ls -lha --color=auto'
 alias grep='grep --color=always'
-#alias scriptlog='script -a ./term_$(whoami)_$(date +%Y_%m%d_%H%M%S).log'
-#alias date="date +'%Y/%m/%d %H:%M %Z'"
-#
+
 ##Alias for K8s
 alias k='kubectl'
 ##Alias for deepl
@@ -56,7 +53,6 @@ zstyle ':vcs_info:*' formats "%F{green}%c%u[ %b]%f"
 zstyle ':vcs_info:*' actionformats '[%b|%a]'
 precmd () { vcs_info }
 RPROMPT+='${vcs_info_msg_0_} '$RPROMPT
-
 
 # plugins
 source ~/.zplug/init.zsh
@@ -95,7 +91,6 @@ zstyle ':completion:*' group-name ''
 # ssh keys
 eval $(ssh-agent) 1> /dev/null 2> /dev/null
 ssh-add ${HOME}/.ssh/*.pem 1> /dev/null 2> /dev/null
-
 
 # awscli autocompetion
 autoload bashcompinit
@@ -161,6 +156,7 @@ source <(kubectl completion zsh)
 # neofetch
 fastfetch
 
+# for perl
 PERL5LIB="${HOME}/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="${HOME}/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"${HOME}/perl5\""; export PERL_MB_OPT;
@@ -185,9 +181,7 @@ export PATH="$PYENV_ROOT/bin:$PYENV_ROOT/shims:$PATH"
 bindkey "^R" history-incremental-search-backward
 
 # codex completion settings
-
-
-#compdef codex
+# compdef codex
 
 autoload -U is-at-least
 
@@ -777,4 +771,12 @@ if [ "$funcstack[1]" = "_codex" ]; then
     _codex "$@"
 else
     compdef _codex codex
+fi
+
+# Kiro IDE (VS Code based) shell integration
+# IDEの統合ターミナルでのみ読み込む。kiroコマンドやスクリプトが無い環境でもエラーにならないよう存在チェックを行う。
+if [[ "$TERM_PROGRAM" == "vscode" ]] && command -v kiro >/dev/null 2>&1; then
+    _kiro_si="$(kiro --locate-shell-integration-path zsh 2>/dev/null)"
+    [[ -n "$_kiro_si" && -f "$_kiro_si" ]] && . "$_kiro_si"
+    unset _kiro_si
 fi
