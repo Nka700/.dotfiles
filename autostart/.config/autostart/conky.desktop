@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Conky
+Exec=sh -c 'sleep 5; find "$HOME/.dotfiles" -name "*conkyrc*" -type f | while read -r CONFIG; do conky -b -c "$CONFIG" 2>>/tmp/conky.log; sleep 3; done'
+Terminal=false
+X-GNOME-Autostart-enabled=true
