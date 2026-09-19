@@ -23,7 +23,7 @@ git_branch() {
     printf ' (%s)' "$branch"
 }
 
-#PS1='[\u@\h \W]\$ '
-PS1='[\u@\h \W$(git_branch)]\$ '
+#PS1='[\u@\h \W$(git_branch)]\$ '
+PS1='[\u@\h \W\[\e[32m\]$(git_branch)\[\e[0m\]]\$ '
 
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path bash)"
