@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Thorium Reader
+Comment=電子書籍リーダー
+Exec=thorium-reader
+Terminal=false

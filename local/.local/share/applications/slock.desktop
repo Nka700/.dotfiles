@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=slock
+Comment=画面をロック
+Exec=/usr/sbin/slock
+Terminal=false
