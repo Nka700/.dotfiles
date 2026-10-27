@@ -15,11 +15,9 @@ export EDITOR=vim
 # define git prompt functions
 git_branch() {
     local branch
-
     branch=$(git symbolic-ref --short HEAD 2>/dev/null) ||
         branch=$(git rev-parse --short HEAD 2>/dev/null) ||
         return
-
     printf ' (%s)' "$branch"
 }
 
