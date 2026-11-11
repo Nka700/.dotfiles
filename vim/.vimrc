@@ -148,6 +148,23 @@ let g:vim_json_syntax_conceal = 0
 filetype plugin indent on
 syntax on
 
+" Keep the current line readable after syntax/colorscheme changes.
+if exists('&cursorlineopt')
+  set cursorlineopt=both
+endif
+
+function! s:ApplyCursorLineHighlight() abort
+  highlight CursorLine   term=none cterm=none ctermfg=White ctermbg=238 gui=none guifg=#f0f0f0 guibg=#303030
+  highlight CursorLineNr term=bold cterm=bold ctermfg=Yellow ctermbg=238 gui=bold guifg=#ffd75f guibg=#303030
+endfunction
+
+augroup my_cursorline
+  autocmd!
+  autocmd ColorScheme * call s:ApplyCursorLineHighlight()
+augroup END
+
+call s:ApplyCursorLineHighlight()
+
 "=========================================================
 " NERDTree (manual only, single tree shared across tabs)
 "=========================================================
@@ -231,4 +248,3 @@ endfunction
 " diffopt
 "=========================================================
 set diffopt+=context:10000
-
